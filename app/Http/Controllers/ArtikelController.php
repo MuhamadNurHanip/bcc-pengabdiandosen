@@ -16,7 +16,7 @@ class ArtikelController extends Controller
 {
     public function index()
     {
-        $artikels = Artikel::paginate(2);
+        $artikels = Artikel::paginate(5);
         return view('Artikel.index', compact('artikels'));
     }
 
@@ -38,7 +38,7 @@ class ArtikelController extends Controller
         $request->validate([
             'judul' => 'required|string',
             'konten' => 'required|string',
-            'tgl_published' => 'required|string',
+            'tgl_published' => 'nullable|string',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:11048',
         ]);
 
@@ -128,7 +128,7 @@ class ArtikelController extends Controller
         $request->validate([
             'judul' => 'required|string',
             'konten' => 'required|string',
-            'tgl_published' => 'required|string',
+            'tgl_published' => 'nullable|string',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:11048',
         ]);
 

@@ -18,7 +18,7 @@ class KontakController extends Controller
 public function index2()
 {
     // $contact = Kontak::;
-    $kontaks = Kontak::paginate(4);
+    $kontaks = Kontak::paginate(5);
     return view('kontak.index', compact('kontaks'));
 }
 

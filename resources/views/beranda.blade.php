@@ -30,7 +30,6 @@
         {{-- features --}}
 
 
-
         <div class="container mx-auto px-6 py-8" id="produk">
             <!-- Our Categories -->
             <section class="container mx-auto px-6 py-3">
@@ -226,98 +225,23 @@
         </div>
         <!-- End Card Blog -->
 
-        <!-- Galeri -->
-        {{-- <section class="py-12">
-            <div class="mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-center">{{ __('message.colab') }}</h2>
-                <div x-data x-init="$nextTick(() => {
-                    const content = $refs.content;
-                    const item = $refs.item;
-                    const clone = item.cloneNode(true);
-                    content.appendChild(clone);
-                });" class="relative w-full bg-gray-400 container-block">
-                    <div
-                        class="relative w-full py-3 mx-auto overflow-hidden text-lg italic tracking-wide text-white uppercase bg-gray-400 max-w-7xl sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
-                        <div class="absolute left-0 z-20 w-40 h-full bg-gradient-to-r from-gray-400 to-transparent"></div>
-                        <div class="absolute right-0 z-20 w-40 h-full bg-gradient-to-l from-gray-400 to-transparent"></div>
-                        <div x-ref="content" class="flex items-center justify-center h-48 animate-marquee">
-                            <div x-ref="item"
-                                class="flex items-center justify-around flex-shrink-0 w-full py-2 space-x-2 text-white">
-                                @foreach ($kerjasamas as $kerjasama)
-                                    <div class="w-auto fill-current">
-                                        <img class="h-40 " src="{{ asset('images/' . $kerjasama->gambar) }}"
-                                            alt="">
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <style>
-                    @keyframes marquee {
-                        0% {
-                            transform: translateX(0);
-                        }
-
-                        100% {
-                            transform: translateX(-100%);
-                        }
-                    }
-
-                    .animate-marquee {
-                        animation: marquee 20s linear infinite;
-                    }
-
-                    /*
-                     *  This is a container query used for the demo that does not need to be included
-                     */
-                    .container-block {
-                        container-type: inline-size;
-                    }
-
-                    @container (max-width: 1100px)
-
-                        {
-
-                        .container-block svg:nth-child(3),
-                        .container-block svg:nth-child(4) {
-                            display: none;
-                        }
-                    }
-
-                    /* Optional: Hover effect */
-                    img:hover {
-                        transform: scale(1.05);
-                    }
-                </style>
-
-            </div>
-        </section> --}}
-
+        {{-- kerjasama --}}
         <section class="py-12">
             <div class="mx-auto">
                 <h2 class="text-3xl font-bold mb-6 text-center">{{ __('message.colab') }}</h2>
-                <div x-data x-init="$nextTick(() => {
-                    const content = $refs.content;
-                    const item = $refs.item;
-                    const clone = item.cloneNode(true);
-                    content.appendChild(clone);
-                });" class="relative w-full bg-gray-400 container-block">
+                <div class="relative w-full bg-gray-400 container-block">
                     <div
                         class="relative w-full py-3 mx-auto overflow-hidden text-lg italic tracking-wide text-white uppercase bg-gray-400 max-w-7xl sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
                         <div class="absolute left-0 z-20 w-40 h-full bg-gradient-to-r from-gray-400 to-transparent"></div>
                         <div class="absolute right-0 z-20 w-40 h-full bg-gradient-to-l from-gray-400 to-transparent"></div>
                         <div x-ref="content" class="flex items-center justify-center h-48 animate-marquee">
-                            <div x-ref="item"
-                                class="flex items-center justify-around flex-shrink-0 space-x-8 text-white">
+                            <div x-ref="item" class="flex items-center justify-around flex-shrink-0 space-x-8 text-white flex-wrap">
                                 @foreach ($kerjasamas as $kerjasama)
-                                    <div class="w-auto">
-                                        <img class="h-40" src="{{ asset('images/' . $kerjasama->gambar) }}" alt="">
+                                    <div class="w-auto sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                                        <img class="h-40 w-full object-cover" src="{{ asset('images/' . $kerjasama->gambar) }}" alt="">
                                     </div>
                                 @endforeach
-                            </div>
+                            </div>                                                      
                         </div>
                     </div>
                 </div>
@@ -327,6 +251,7 @@
                         0% {
                             transform: translateX(0);
                         }
+
                         100% {
                             transform: translateX(-50%);
                         }
@@ -342,7 +267,10 @@
                         container-type: inline-size;
                     }
 
-                    @container (max-width: 1100px) {
+                    @container (max-width: 1100px)
+
+                        {
+
                         .container-block svg:nth-child(3),
                         .container-block svg:nth-child(4) {
                             display: none;
@@ -481,10 +409,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <style>
             /* CSS untuk menyembunyikan scrollbar */
             .no-scrollbar::-webkit-scrollbar {
@@ -504,6 +428,5 @@
         </style>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     </body>
 @endsection

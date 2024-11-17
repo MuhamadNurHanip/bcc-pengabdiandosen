@@ -18,7 +18,7 @@ class KerjasamaController extends Controller
 public function index2()
 {
     // $contact = Kerjasama::;
-    $kerjasamas = Kerjasama::paginate(4);
+    $kerjasamas = Kerjasama::paginate(5);
     return view('kerjasama.index', compact('kerjasamas'));
 }
 

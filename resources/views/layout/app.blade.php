@@ -9,7 +9,6 @@
     <link href="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
 
-
     <!-- CSS for Animations -->
     <style>
         /* Horizontal Animation */

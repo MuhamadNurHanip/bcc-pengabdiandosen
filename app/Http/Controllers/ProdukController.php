@@ -16,22 +16,22 @@ class ProdukController extends Controller
      */
 
 
-    public function index(Request $request)
-    {
-        $search = $request->input('search');
-
-        $produks = Produk::with('kategoris')
-            ->when($search, function ($query, $search) {
-                return $query->where('nama', 'like', "%{$search}%")
-                    ->orWhere('deskripsi', 'like', "%{$search}%")
-                    ->orWhereHas('kategoris', function ($query) use ($search) {
-                        $query->where('nama_kategori', 'like', "%{$search}%");
-                    });
-            })
-            ->get();
-
-        return view('Produk.index', compact('produks', ));
-    }
+     public function index(Request $request)
+     {
+         $search = $request->input('search');
+         // $produks = Produk::paginate(3);
+         $produks = Produk::with('kategoris')
+             ->when($search, function ($query, $search) {
+                 return $query->where('nama', 'like', "%{$search}%")
+                     ->orWhere('deskripsi', 'like', "%{$search}%")
+                     ->orWhereHas('kategoris', function ($query) use ($search) {
+                         $query->where('nama_kategori', 'like', "%{$search}%");
+                     });
+             })
+             ->paginate(5);
+ 
+         return view('Produk.index', compact('produks'));
+     }
 
     /**
      * Show the form for creating a new resource.

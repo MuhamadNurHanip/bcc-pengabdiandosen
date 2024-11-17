@@ -69,19 +69,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('admin/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
 
     Route::get('admin/kontak', [KontakController::class, 'index2'])->name('kontak.index');  // List all kontak
-Route::get('admin/kontak/create', [KontakController::class, 'create'])->name('kontak.create');  // Create form
-Route::post('admin/kontak', [KontakController::class, 'store'])->name('kontak.store');  // Store new kontak
-Route::get('admin/kontak/{id}/edit', [KontakController::class, 'edit'])->name('kontak.edit');  // Edit form
-Route::put('admin/kontak/{kontak}', [KontakController::class, 'update'])->name('kontak.update');
-Route::delete('admin/kontak/{kontak}', [KontakController::class, 'destroy'])->name('kontak.destroy');
+    Route::get('admin/kontak/create', [KontakController::class, 'create'])->name('kontak.create');  // Create form
+    Route::post('admin/kontak', [KontakController::class, 'store'])->name('kontak.store');  // Store new kontak
+    Route::get('admin/kontak/{id}/edit', [KontakController::class, 'edit'])->name('kontak.edit');  // Edit form
+    Route::put('admin/kontak/{kontak}', [KontakController::class, 'update'])->name('kontak.update');
+    Route::delete('admin/kontak/{kontak}', [KontakController::class, 'destroy'])->name('kontak.destroy');
 
 
-Route::get('admin/kerjasama', [KerjasamaController::class, 'index2'])->name('kerjasama.index');  // List all kerjasama
-Route::get('admin/kerjasama/create', [KerjasamaController::class, 'create'])->name('kerjasama.create');  // Create form
-Route::post('admin/kerjasama', [KerjasamaController::class, 'store'])->name('kerjasama.store');  // Store new kerjasama
-Route::get('admin/kerjasama/{id}/edit', [KerjasamaController::class, 'edit'])->name('kerjasama.edit');  // Edit form
-Route::put('admin/kerjasama/{kerjasama}', [kerjasamaController::class, 'update'])->name('kerjasama.update');
-Route::delete('admin/kerjasama/{kerjasama}', [KerjasamaController::class, 'destroy'])->name('kerjasama.destroy');
+    Route::get('admin/kerjasama', [KerjasamaController::class, 'index2'])->name('kerjasama.index');  // List all kerjasama
+    Route::get('admin/kerjasama/create', [KerjasamaController::class, 'create'])->name('kerjasama.create');  // Create form
+    Route::post('admin/kerjasama', [KerjasamaController::class, 'store'])->name('kerjasama.store');  // Store new kerjasama
+    Route::get('admin/kerjasama/{id}/edit', [KerjasamaController::class, 'edit'])->name('kerjasama.edit');  // Edit form
+    Route::put('admin/kerjasama/{kerjasama}', [kerjasamaController::class, 'update'])->name('kerjasama.update');
+    Route::delete('admin/kerjasama/{kerjasama}', [KerjasamaController::class, 'destroy'])->name('kerjasama.destroy');
 
     //artikel
     Route::get('admin/artikel', [ArtikelController::class, 'index'])->name('Artikel.index');
@@ -96,4 +96,4 @@ Route::delete('admin/kerjasama/{kerjasama}', [KerjasamaController::class, 'destr
     Route::post('summernote/picture/delete/{type}', [ArtikelController::class, 'uploadImageSummernote']);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
