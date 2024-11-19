@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
