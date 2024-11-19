@@ -30,7 +30,7 @@ class ProdukController extends Controller
              })
              ->paginate(5);
  
-         return view('Produk.index', compact('produks'));
+         return view('produk.index', compact('produks'));
      }
 
     /**
