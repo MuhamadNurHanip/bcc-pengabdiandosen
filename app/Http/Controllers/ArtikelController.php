@@ -98,7 +98,7 @@ class ArtikelController extends Controller
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('image'), $filename);
+            $filePath = $file->storeAs('upload/artikel', $filename, 'public');
             Log::info('Image uploaded:', ['filename' => $filename]);
         } else {
             Log::warning('No image uploaded');
