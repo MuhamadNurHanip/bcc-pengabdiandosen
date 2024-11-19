@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
         $posts = $posts->get();
 
         return view('produk', ['posts' => $posts, 'search' => $search]);
-    })->name('produk.index');
+    })->name('produk.index1');
 
 
     Route::get('admin/produk', [ProdukController::class, 'index'])->name('produk.index');
