@@ -475,3 +475,4 @@
 #49 C:\\laragon\\www\\bccrafts\\artisan(13): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
 #50 {main}
 "} 
+[2024-11-19 11:53:27] local.INFO: Locale in session: id  
