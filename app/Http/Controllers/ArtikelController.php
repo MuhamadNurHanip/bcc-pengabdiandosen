@@ -169,7 +169,7 @@ class ArtikelController extends Controller
         if (file_exists($filePath) && !is_dir($filePath)) {
             unlink($filePath);
         } else {
-            dd('File does not exist or is a directory: ' . $filePath);
+            // dd('File does not exist or is a directory: ' . $filePath);
         }
 
         $artikel->delete();
