@@ -21,7 +21,6 @@ class Produk extends Model
         'image3',
         'image4',
         'kategori_id'
-
     ];
 
     public function kategoris()
