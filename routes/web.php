@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function () {
     })->name('produk.index');
 
 
-    Route::get('admin/produk', [ProdukController::class, 'index'])->name('admin.produk.index');
+    Route::get('admin/produk', [ProdukController::class, 'index'])->name('produk.index');
     Route::get('admin/produk/tambah', [ProdukController::class, 'create'])->name('produk.create');
     Route::post('admin/produk', [ProdukController::class, 'store'])->name('produk.store');
     Route::get('admin/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
