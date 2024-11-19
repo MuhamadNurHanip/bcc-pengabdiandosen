@@ -33,6 +33,7 @@ return [
     'search' => 'Rechercher',
     'read_more' => 'Lire la suite'
 
+
 ];
 
 ?>

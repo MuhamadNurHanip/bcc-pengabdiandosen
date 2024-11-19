@@ -32,7 +32,7 @@ return [
     'search' => 'Search',
     'read_more' => 'Read More',
 
-
+ 
 
 
 ];

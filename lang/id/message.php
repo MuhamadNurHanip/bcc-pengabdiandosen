@@ -33,7 +33,7 @@ return [
     'search' => 'Cari',
     'read_more' => 'Baca Selengkapnya'
 
-
+ 
 
 ];
 

@@ -32,7 +32,7 @@ return [
     'search_product' => '搜索产品...',
     'search' => '搜索',
     'read_more' => '阅读更多'
-
+ 
 ];
 
 ?>

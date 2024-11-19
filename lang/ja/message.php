@@ -32,7 +32,7 @@ return [
     'search_product' => '製品を検索...',
     'search' => '検索',
     'read_more' => '続きを読む'
-
+ 
 ];
 
 ?>
