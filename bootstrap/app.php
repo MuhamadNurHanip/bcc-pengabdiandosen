@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(append:[
-            \App\http\Middleware\SetLocale::class,
+            \App\Http\Middleware\SetLocale::class,
             \App\Http\Middleware\CountVisitor::class, // Middleware yang kamu buat
             \Illuminate\Http\Middleware\TrustProxies::class,
             \Illuminate\Http\Middleware\HandleCors::class,
