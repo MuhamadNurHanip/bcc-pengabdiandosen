@@ -27,9 +27,6 @@
         </section>
 
 
-        {{-- features --}}
-
-
         <div class="container mx-auto px-6 py-8" id="produk">
             <!-- Our Categories -->
             <section class="container mx-auto px-6 py-3">
