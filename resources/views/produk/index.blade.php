@@ -98,8 +98,7 @@
                             <td class="px-4 py-3">{{ $produk->deskripsi }}</td>
                             <td class="px-4 py-3">{{ $produk->bahan }}</td>
                             <td class="px-4 py-3">
-                                <img src="{{ asset('upload/produk/' . $produk->image1) }}" alt="Product Image" style="max-width: 100px; max-height: 100px;">
-                            </td>
+                            <img src="{{ url('storage/app/public/produk/' . $produk->image1) }}" alt="Image1">                            </td>
                             <td class="px-4 py-3">{{ $produk->kategoris->nama_kategori }}</td>
                             <td class="px-4 py-3 flex items-center justify-end">
                                 <button id="actionsDropdownButton-{{ $produk->id }}" data-dropdown-toggle="actionsDropdown-{{ $produk->id }}" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700" type="button">
