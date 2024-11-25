@@ -824,3 +824,65 @@
 [2024-11-19 16:47:30] local.INFO: Locale in session: id  
 [2024-11-19 16:47:31] local.INFO: Locale in session: id  
 [2024-11-19 16:47:42] local.INFO: Locale in session: id  
+[2024-11-19 17:01:22] local.INFO: Locale in session: id  
+[2024-11-21 05:01:41] local.INFO: Locale in session: id  
+[2024-11-21 05:02:01] local.INFO: Locale in session: id  
+[2024-11-21 05:02:23] local.INFO: Locale in session: id  
+[2024-11-21 05:02:23] local.INFO: Locale in session: id  
+[2024-11-21 05:02:26] local.INFO: Locale in session: id  
+[2024-11-21 05:02:53] local.INFO: Locale in session: id  
+[2024-11-21 05:03:09] local.INFO: Locale in session: id  
+[2024-11-21 05:03:11] local.INFO: Locale in session: id  
+[2024-11-21 05:04:47] local.INFO: Locale in session: id  
+[2024-11-21 05:04:53] local.INFO: Locale in session: id  
+[2024-11-21 05:04:53] local.INFO: Locale in session: id  
+[2024-11-21 05:04:57] local.INFO: Locale in session: id  
+[2024-11-21 05:04:58] local.INFO: Locale in session: id  
+[2024-11-21 05:05:15] local.INFO: Locale in session: id  
+[2024-11-21 05:05:16] local.INFO: Locale in session: id  
+[2024-11-21 05:05:22] local.INFO: Locale in session: id  
+[2024-11-21 05:05:23] local.INFO: Locale in session: id  
+[2024-11-21 05:05:26] local.INFO: Locale in session: id  
+[2024-11-21 05:05:30] local.INFO: Locale in session: id  
+[2024-11-21 05:07:37] local.INFO: Locale in session: id  
+[2024-11-21 05:07:37] local.INFO: Image 3 uploaded successfully: 1732165657_3.png  
+[2024-11-21 05:07:37] local.INFO: Image 4 not uploaded  
+[2024-11-21 05:07:37] local.INFO: Locale in session: id  
+[2024-11-21 05:17:18] local.INFO: Locale in session: id  
+[2024-11-25 04:10:50] local.INFO: Locale in session: id  
+[2024-11-25 04:11:14] local.INFO: Locale in session: id  
+[2024-11-25 04:11:27] local.INFO: Locale in session: id  
+[2024-11-25 04:11:29] local.INFO: Locale in session: id  
+[2024-11-25 04:11:30] local.INFO: Locale in session: id  
+[2024-11-25 04:11:47] local.INFO: Locale in session: id  
+[2024-11-25 04:11:49] local.INFO: Locale in session: id  
+[2024-11-25 04:13:02] local.INFO: Locale in session: id  
+[2024-11-25 04:15:20] local.INFO: Locale in session: id  
+[2024-11-25 04:16:46] local.INFO: Locale in session: id  
+[2024-11-25 04:19:04] local.INFO: Locale in session: id  
+[2024-11-25 04:21:06] local.INFO: Locale in session: id  
+[2024-11-25 04:21:06] local.INFO: Request data: {"_token":"vkFmW9EfSdS9tChz4wmtqKVuTm66URQ6K3PDLXBP","judul":"BCC - Pengabdian Dosen","tgl_published":"Senin, 25 November 2024","nama_published":"hanif","konten":"Banyuwangi, 12 November 2024 – Blimbingsari Creative Craft menerima kunjungan istimewa dari perwakilan Dinas Perindustrian dan Perdagangan (DISPERINDAG). Kunjungan ini merupakan bagian dari agenda penguatan sinergi antara pemerintah daerah dan pelaku usaha kreatif dalam upaya meningkatkan daya saing produk lokal di pasar nasional maupun internasional.
+
+
+
+Rombongan DISPERINDAG disambut hangat oleh tim manajemen Blimbingsari Creative Craft. Dalam kunjungan tersebut, para tamu diajak berkeliling untuk melihat proses produksi berbagai kerajinan tangan khas Blimbingsari yang mengutamakan kearifan lokal dan ramah lingkungan.
+
+
+
+Selain itu, diskusi interaktif berlangsung antara kedua belah pihak, membahas peluang kolaborasi untuk mendukung pengembangan produk kerajinan lokal. Kepala DISPERINDAG menyampaikan apresiasinya atas inovasi dan kualitas produk yang dihasilkan oleh Blimbingsari Creative Craft, yang dianggap mampu mencerminkan potensi unggulan Kabupaten Banyuwangi.
+
+
+
+“Kami sangat terkesan dengan kreativitas yang ditampilkan oleh Blimbingsari Creative Craft. Diharapkan kerjasama ini dapat terus berlanjut untuk memperkuat industri kreatif di Banyuwangi, terutama dalam hal pemasaran digital dan pelatihan sumber daya manusia,” ujar Kepala DISPERINDAG.
+
+
+
+Melalui kunjungan ini, Blimbingsari Creative Craft berharap dapat memperluas jaringan pemasaran serta mendapatkan dukungan lebih lanjut dari pemerintah daerah untuk memaksimalkan kontribusinya dalam pertumbuhan ekonomi kreatif.","gambar":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpB9FE.tmp"}} 
+[2024-11-25 04:21:06] local.INFO: User published: {"name":"hanif"} 
+[2024-11-25 04:21:06] local.INFO: Converted date: {"original":"Senin, 25 November 2024","converted":"Monday, 25 November 2024"} 
+[2024-11-25 04:21:06] local.INFO: Image uploaded: {"filename":"1732508466.png"} 
+[2024-11-25 04:21:06] local.INFO: Artikel saved: {"judul":"BCC - Pengabdian Dosen","id":3} 
+[2024-11-25 04:21:07] local.INFO: Locale in session: id  
+[2024-11-25 04:21:35] local.INFO: Locale in session: id  
+[2024-11-25 04:22:05] local.INFO: Locale in session: id  
+[2024-11-25 04:22:05] local.INFO: Locale in session: id  

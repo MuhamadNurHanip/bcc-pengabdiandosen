@@ -43,18 +43,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //produk
-    Route::get('/produk', function () {
-        $search = request('search');
-        $posts = Produk::latest();
+    // <!-- Route::get('/produk', function () {
+    //     $search = request('search');
+    //     $posts = Produk::latest();
 
-        if ($search) {
-            $posts->where('nama', 'like', '%' . $search . '%');
-        }
+    //     if ($search) {
+    //         $posts->where('nama', 'like', '%' . $search . '%');
+    //     }
 
-        $posts = $posts->get();
+    //     $posts = $posts->get();
 
-        return view('produk', ['posts' => $posts, 'search' => $search]);
-    })->name('produk.index1');
+    //     return view('produk', ['posts' => $posts, 'search' => $search]);
+    // })->name('produk.index1'); -->
 
 
     Route::get('admin/produk', [ProdukController::class, 'index'])->name('produk.index');
