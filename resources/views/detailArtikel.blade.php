@@ -43,7 +43,7 @@
                 <!-- Image with hover animation -->
                 <div
                     class="card bg-white overflow-hidden rounded-lg">
-                    <img src="{{ asset('storage/images/'.$filename) }}"
+                    <img src="{{ asset('upload/artikel/' . $artikel->gambar) }}"
                         class="img-fluid rounded-4 w-full h-[629px] object-cover">
                 </div>
 

@@ -100,6 +100,7 @@
                     <tbody>
                         @foreach ($artikels as $artikel)
                             <tr class="border-b dark:border-gray-700">
+
                                 <td class="px-4 py-3">
                                     {{ ($artikels->currentPage() - 1) * $artikels->perPage() + $loop->iteration }}</td>
                                 <td class="px-4 py-3">{{ $artikel->judul }}</td>
@@ -117,7 +118,7 @@
                                 </td>
 
                                 <td class="px-4 py-3">
-                                    <img src="{{ asset('storage/images/'.$filename) }}" alt="Product Image"
+                                    <img src="{{ asset('upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
                                         class="w-16 md:w-24">
                                 </td>
                                 <td class="px-4 py-3 flex items-center">
