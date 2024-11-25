@@ -18,7 +18,7 @@
       @foreach ($artikels as $artikel)
       <a href="{{ route('Artikel.detail', $artikel->id) }}" class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40">
         <div class="aspect-w-16 aspect-h-11">
-          <img class="w-full object-cover rounded-xl" src="{{ asset('upload/artikel/' . $artikel->gambar) }}" alt="Blog Image">
+          <img class="w-full object-cover rounded-xl" src="{{ asset('storage/images/'.$filename) }}" alt="Blog Image">
         </div>
         <div class="my-6">
           <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">

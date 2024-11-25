@@ -100,17 +100,12 @@
                     <tbody>
                         @foreach ($artikels as $artikel)
                             <tr class="border-b dark:border-gray-700">
-                                {{-- <td class="px-4 py-3">{{ $loop->iteration }}</td> --}}
                                 <td class="px-4 py-3">
                                     {{ ($artikels->currentPage() - 1) * $artikels->perPage() + $loop->iteration }}</td>
                                 <td class="px-4 py-3">{{ $artikel->judul }}</td>
                                 <td class="px-4 py-3" style="max-width: 300px; word-wrap: break-word; text-align: justify;">
                                     {{ strip_tags($artikel->konten) }}
                                 </td>
-                                {{-- <td class="px-4 py-3">
-                                    {{ \Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}
-                                </td>
-                                <td class="px-4 py-3">{{ $artikel->nama_published }}</td> --}}
                                 <td class="px-4 py-3" style="display: none;">
                                     <input type="hidden" name="tgl_published" value="{{ $artikel->tgl_published }}">
                                     {{ \Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}
@@ -122,7 +117,7 @@
                                 </td>
 
                                 <td class="px-4 py-3">
-                                    <img src="{{ asset('upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
+                                    <img src="{{ asset('storage/images/'.$filename) }}" alt="Product Image"
                                         class="w-16 md:w-24">
                                 </td>
                                 <td class="px-4 py-3 flex items-center">
