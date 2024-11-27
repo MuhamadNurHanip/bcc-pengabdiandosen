@@ -118,9 +118,9 @@
                                 </td>
 
                                 <td class="px-4 py-3">
-                                    <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
-                                        class="w-16 md:w-24">
-                                </td>
+                                <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
+                                    class="w-16 md:w-24">
+                            </td>
                                 <td class="px-4 py-3 flex items-center">
                                     <button id="actionsDropdownButton-{{ $artikel->id }}"
                                         data-dropdown-toggle="actionsDropdown-{{ $artikel->id }}"

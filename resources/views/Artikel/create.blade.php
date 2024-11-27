@@ -1,9 +1,8 @@
 <x-app-layout>
     <x-layout>
-
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
         <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-3 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
@@ -112,10 +111,10 @@
                         ]
                     },
                     callbacks: {
-                        onImageUpload: function (image) {
+                        onImageUpload: function(image) {
                             sendFile(image[0]);
                         },
-                        onMediaDelete: function (target) {
+                        onMediaDelete: function(target) {
                             deleteFile(target[0].src);
                         }
                     },
@@ -126,10 +125,11 @@
             }
         </script>
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 // $('#summernote').summernote();
                 summerNoteInit();
             });
+
             function sendFile(file, editor, welEditable) {
                 token = "{{ csrf_token() }}"
                 data = new FormData();
@@ -144,7 +144,7 @@
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success: function (url) {
+                    success: function(url) {
                         console.log(url);
                         if (url['status'] == "success") {
                             $('#summernote').summernote('enable');
@@ -156,13 +156,14 @@
                         }
                         $("img").addClass("img-fluid");
                     },
-                    error: function (data) {
+                    error: function(data) {
                         console.log(data)
                         $('#summernote').summernote('enable');
                         $('#loading-image-summernote').hide();
                     }
                 });
             }
+
             function deleteFile(target) {
                 token = "{{ csrf_token() }}"
                 data = new FormData();
@@ -177,14 +178,14 @@
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success: function (result) {
+                    success: function(result) {
                         console.log(result)
                         if (result['status'] == "success") {
                             $('.summernote').summernote('enable');
                             $('#loading-image-summernote').hide();
                         }
                     },
-                    error: function (data) {
+                    error: function(data) {
                         console.log(data)
                         $('.summernote').summernote('enable');
                         $('#loading-image-summernote').hide();
