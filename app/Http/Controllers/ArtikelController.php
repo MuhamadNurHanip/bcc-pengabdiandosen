@@ -132,7 +132,6 @@ class ArtikelController extends Controller
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:11048',
         ]);
 
-        $namaPublished = Auth::user()->name;
         $tgl_published = $request->input('tgl_published');
 
         try {
@@ -141,15 +140,12 @@ class ArtikelController extends Controller
             return back()->withErrors(['tgl_published' => 'Format tanggal tidak valid'])->withInput();
         }
 
-        if ($request->hasFile('gambar')) {
+         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('storage/upload/artikel'), $filename);
             Log::info('Image uploaded:', ['filename' => $filename]);
-        }else {
-            Log::warning('No image uploaded');
-            return back()->withErrors(['gambar' => 'Gambar harus diunggah'])->withInput();
-        }
+        } 
 
         $artikel->update([
             'judul' => $request->input('judul'),
@@ -193,59 +189,59 @@ class ArtikelController extends Controller
         return view('Artikel.index', compact('artikels', 'query'));
     }
 
-    public function uploadImageSummernote(Request $request, $type)
-    {
-        $post = $request->all();
-        $post['type'] = 'summernote';
+    // public function uploadImageSummernote(Request $request, $type)
+    // {
+    //     $post = $request->all();
+    //     $post['type'] = 'summernote';
 
-        // Validasi ukuran file (maksimum 5MB)
-        $size = $request->file->getSize();
-        if ($size > 10000000) {
-            return ['status' => false, 'messages' => ['Image Size Exceeded 10MB']];
-        }
+    //     // Validasi ukuran file (maksimum 5MB)
+    //     $size = $request->file->getSize();
+    //     if ($size > 10000000) {
+    //         return ['status' => false, 'messages' => ['Image Size Exceeded 10MB']];
+    //     }
 
-        // Tentukan ekstensi dan nama file
-        $ext = $request->file->getClientOriginalExtension();
-        $filename = 'summernote_image_' . time() . '.' . $ext;
-        $path = 'upload/' . $filename;
+    //     // Tentukan ekstensi dan nama file
+    //     $ext = $request->file->getClientOriginalExtension();
+    //     $filename = 'summernote_image_' . time() . '.' . $ext;
+    //     $path = 'upload/' . $filename;
 
-        // Pindahkan file ke direktori public/upload
-        $request->file->move(public_path('upload'), $filename);
+    //     // Pindahkan file ke direktori public/upload
+    //     $request->file->move(public_path('upload'), $filename);
 
-        // Cek apakah file berhasil disimpan
-        if (file_exists(public_path($path))) {
-            return [
-                "status" => "success",
-                "path" => $path,
-                "image" => $filename,
-                "image_url" => url($path)
-            ];
-        } else {
-            return [
-                "status" => "fail"
-            ];
-        }
-    }
+    //     // Cek apakah file berhasil disimpan
+    //     if (file_exists(public_path($path))) {
+    //         return [
+    //             "status" => "success",
+    //             "path" => $path,
+    //             "image" => $filename,
+    //             "image_url" => url($path)
+    //         ];
+    //     } else {
+    //         return [
+    //             "status" => "fail"
+    //         ];
+    //     }
+    // }
 
-    public function deleteImageSummernote(Request $request, $type)
-    {
-        // Pastikan 'target' ada di request
-        if (!$request->has('target')) {
-            return response()->json(['status' => false, 'message' => 'Target tidak ditemukan'], 400);
-        }
+    // public function deleteImageSummernote(Request $request, $type)
+    // {
+    //     // Pastikan 'target' ada di request
+    //     if (!$request->has('target')) {
+    //         return response()->json(['status' => false, 'message' => 'Target tidak ditemukan'], 400);
+    //     }
 
-        // Memisahkan URL dan mengambil nama file dari 'target'
-        $arrayUrl = array_filter(explode('/', $request->target));
-        $fileName = end($arrayUrl);
-        $path = public_path('upload/' . $fileName);
+    //     // Memisahkan URL dan mengambil nama file dari 'target'
+    //     $arrayUrl = array_filter(explode('/', $request->target));
+    //     $fileName = end($arrayUrl);
+    //     $path = public_path('upload/' . $fileName);
 
-        // Cek apakah file ada dan hapus
-        if (file_exists($path)) {
-            unlink($path); // Menghapus file
+    //     // Cek apakah file ada dan hapus
+    //     if (file_exists($path)) {
+    //         unlink($path); // Menghapus file
 
-            return response()->json(['status' => true, 'message' => 'Gambar berhasil dihapus']);
-        } else {
-            return response()->json(['status' => false, 'message' => 'Gambar tidak ditemukan'], 404);
-        }
-    }
+    //         return response()->json(['status' => true, 'message' => 'Gambar berhasil dihapus']);
+    //     } else {
+    //         return response()->json(['status' => false, 'message' => 'Gambar tidak ditemukan'], 404);
+    //     }
+    // }
 }
