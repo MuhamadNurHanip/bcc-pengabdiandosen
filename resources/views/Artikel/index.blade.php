@@ -118,7 +118,7 @@
                                 </td>
 
                                 <td class="px-4 py-3">
-                                    <img src="{{ asset('upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
+                                    <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
                                         class="w-16 md:w-24">
                                 </td>
                                 <td class="px-4 py-3 flex items-center">

@@ -187,8 +187,8 @@
                 @foreach ($artikels->take(3) as $artikel)
                     <a class="group flex flex-col focus:outline-none" href="{{ route('Artikel.detail', $artikel->id) }}">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-                            <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-                                src="{{ asset('upload/artikel/' . $artikel->gambar) }}" alt="Blog Image">
+                            <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
+                                        class="w-16 md:w-24">
                             <span
                                 class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">
                                 {{ \Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('D MMMM, YYYY') }}
