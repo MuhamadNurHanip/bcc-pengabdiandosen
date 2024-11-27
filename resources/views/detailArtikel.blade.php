@@ -43,8 +43,8 @@
                 <!-- Image with hover animation -->
                 <div
                     class="card bg-white overflow-hidden rounded-lg">
-                    <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}" alt="Product Image"
-                                        class="w-16 md:w-24">
+                    <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}"
+                        class="img-fluid rounded-4 w-full h-[629px] object-cover">
                 </div>
 
 
@@ -67,4 +67,11 @@
             </div>
         </div>
     </section>
+    {{-- <script>
+        $('#description').summernote({
+            placeholder: 'description...',
+            tabsize:2,
+            height:300
+        });
+    </script> --}}
 @endsection
