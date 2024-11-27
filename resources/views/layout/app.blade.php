@@ -77,7 +77,7 @@
     <nav class="bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-20">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ asset('images/logo.png') }}" class="h-14">
+                <img src="{{ url('images/logo.png') }}" class="w-14 h-14 object-contain ml-6">
             </a>
             <div class="bungkus flex items-center">
                 <!-- Dropdown Multilanguage -->

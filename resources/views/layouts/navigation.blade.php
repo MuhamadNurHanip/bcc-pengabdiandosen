@@ -5,7 +5,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ url('images/logo.png') }}" width="50" height="50">
+                        <img src="{{ url('images/logo.png') }}" class="w-14 h-14 object-contain ml-5">
                     </a>
                 </div>
                 <!-- Navigation Links -->
