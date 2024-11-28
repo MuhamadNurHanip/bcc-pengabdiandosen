@@ -83,7 +83,7 @@ class ProdukController extends Controller
 
         Log::info('Data produk yang akan disimpan:', $produk->toArray());
 
-        // Proses penyimpanan gambar pertama
+        // 
         $images = ['image1', 'image2', 'image3', 'image4'];
         foreach ($images as $image) {
             if ($request->hasFile($image)) {

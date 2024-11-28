@@ -1,8 +1,6 @@
-@extends('layout.app')
+<?php $__env->startSection('title', 'BCC - Beranda'); ?>
 
-@section('title', 'BCC - Beranda')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <body class="bg-gray-100"> <!-- Additional Features -->
         <div class="bg-gray-100 dark:bg-gray-800 py-8">
@@ -14,40 +12,40 @@
                                 <!-- Carousel wrapper -->
                                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                                     <!-- Item 1 -->
-                                    @if ($produk->image1)
+                                    <?php if($produk->image1): ?>
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('storage/produk/' . $produk->image1) }}"
+                                            <img src="<?php echo e(asset('storage/produk/' . $produk->image1)); ?>"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
-                                    @endif
+                                    <?php endif; ?>
                                     <!-- Item 2 -->
-                                    @if ($produk->image2)
+                                    <?php if($produk->image2): ?>
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('storage/produk/' . $produk->image2) }}"
+                                            <img src="<?php echo e(asset('storage/produk/' . $produk->image2)); ?>"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
-                                    @endif
+                                    <?php endif; ?>
                                     <!-- Item 3 -->
-                                    @if ($produk->image3)
+                                    <?php if($produk->image3): ?>
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('storage/produk/' . $produk->image3) }}"
+                                            <img src="<?php echo e(asset('storage/produk/' . $produk->image3)); ?>"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
-                                    @endif
+                                    <?php endif; ?>
                                     <!-- Item 4 -->
-                                    @if ($produk->image4)
+                                    <?php if($produk->image4): ?>
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('storage/produk/' . $produk->image4) }}"
+                                            <img src="<?php echo e(asset('storage/produk/' . $produk->image4)); ?>"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
-                                    @endif
+                                    <?php endif; ?>
                                 </div>
                                 <!-- Slider controls -->
-                                @if ($produk->image2 || $produk->image3 || $produk->image4)
+                                <?php if($produk->image2 || $produk->image3 || $produk->image4): ?>
                                 <button type="button"
                                     class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                                     data-carousel-prev>
@@ -74,33 +72,36 @@
                                         <span class="sr-only">Next</span>
                                     </span>
                                 </button>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="md:flex-1 px-4">
                             <div
                                 class="mb-4 rounded-full bg-blue-800 py-1 px-4 border border-transparent text-xs text-white transition-all shadow-sm w-24 text-center">
-                                {{ $produk->kategori_translated ?? $produk->kategoris->nama_kategori }}
+                                <?php echo e($produk->kategori_translated ?? $produk->kategoris->nama_kategori); ?>
+
                             </div>
                             <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                                {{ $produk->nama_translated ?? $produk->nama }}</h2>
+                                <?php echo e($produk->nama_translated ?? $produk->nama); ?></h2>
 
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong> {{ __('message.material') }}
-                                </strong>{{ $produk->bahan }}</p>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong> {{ __('message.size') }}
-                                </strong>{{ $produk->ukuran }}</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong> <?php echo e(__('message.material')); ?>
+
+                                </strong><?php echo e($produk->bahan); ?></p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong> <?php echo e(__('message.size')); ?>
+
+                                </strong><?php echo e($produk->ukuran); ?></p>
 
                             <div>
-                                <span class="font-bold text-gray-700 dark:text-gray-300">{{ __('message.description') }}</span>
+                                <span class="font-bold text-gray-700 dark:text-gray-300"><?php echo e(__('message.description')); ?></span>
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                    {{ $produk->deskripsi_translated ?? $produk->deskripsi }}</p>
+                                    <?php echo e($produk->deskripsi_translated ?? $produk->deskripsi); ?></p>
                             </div>
                             <div class=" pt-2 pb-3">
                                 <!-- Modal toggle -->
                                 <button data-modal-target="select-modal" data-modal-toggle="select-modal"
                                     class="block text-white bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     type="button">
-                                    @lang('message.contact_us')
+                                    <?php echo app('translator')->get('message.contact_us'); ?>
                                 </button>
                             </div>
                         </div>
@@ -116,7 +117,7 @@
                         <!-- Modal header -->
                         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                @lang('message.contact_us')
+                                <?php echo app('translator')->get('message.contact_us'); ?>
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -132,22 +133,23 @@
                         <!-- Modal body -->
                         <div class="p-4 md:p-5">
                             <ul class="space-y-4 mb-4">
-                                @foreach ($kontaks as $kontak)
+                                <?php $__currentLoopData = $kontaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kontak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li>
-                                        <a href="{{ $kontak->tautan }}" class="hover:underline">
+                                        <a href="<?php echo e($kontak->tautan); ?>" class="hover:underline">
                                             <label for="job-1"
                                                 class="inline-flex items-center justify-between w-full p-5 text-gray-900 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-500 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:bg-gray-600 dark:hover:bg-gray-500">
                                                 <div class="block">
-                                                    <div class="w-full text-lg font-semibold">{{ $kontak->nama_aplikasi }}
+                                                    <div class="w-full text-lg font-semibold"><?php echo e($kontak->nama_aplikasi); ?>
+
                                                     </div>
-                                                    {{-- <div class="w-full text-gray-500 dark:text-gray-400">Flowbite</div> --}}
+                                                    
                                                 </div>
-                                                <img src="{{ asset('storage/' . $kontak->gambar) }}"
-                                                    alt="{{ $kontak->nama_aplikasi }}" class="h-12 w-12 sm:h-16 sm:w-16">
+                                                <img src="<?php echo e(asset('storage/' . $kontak->gambar)); ?>"
+                                                    alt="<?php echo e($kontak->nama_aplikasi); ?>" class="h-12 w-12 sm:h-16 sm:w-16">
                                             </label>
                                         </a>
                                     </li>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         </div>
                     </div>
@@ -157,4 +159,6 @@
         </div>
     </body>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\test\bcc-pengabdiandosen\resources\views/detailProduk.blade.php ENDPATH**/ ?>
