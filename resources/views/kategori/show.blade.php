@@ -43,7 +43,7 @@
         @foreach ($kategori->produks as $produk)
             <div class="max-w-xs flex-shrink-0 w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
                 <a href="#">
-                    <img class="rounded-t-lg w-full h-36 object-cover" src="{{ asset('upload/produk/' . $produk->image1) }}" alt="{{ $produk->nama }}" />
+                    <img class="rounded-t-lg w-full h-36 object-cover" src="{{ asset('storage/' . $produk->image1) }}" alt="{{ $produk->nama }}" />
                 </a>
                 <div class="p-3">
                     <div class="mb-4 rounded-full w-auto bg-blue-800 py-0.5 px-2 border border-transparent text-xs text-white transition-all shadow-sm text-center">
