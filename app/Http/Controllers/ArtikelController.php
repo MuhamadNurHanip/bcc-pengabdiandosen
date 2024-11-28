@@ -152,13 +152,13 @@ class ArtikelController extends Controller
             ]);
 
 
-            if ($artikel->gambar && Storage::disk('local')->exists('upload/artikel/' . $artikel->gambar)) {
-                Storage::disk('local')->delete('upload/artikel/' . $artikel->gambar);
+            if ($artikel->gambar && Storage::disk('public')->exists('artikel/' . $artikel->gambar)) {
+                Storage::disk('public')->delete('artikel/' . $artikel->gambar);
             }
 
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $path = Storage::disk('local')->putFileAs('upload/artikel', $file, $filename);
+            $path = Storage::disk('public')->putFileAs('artikel', $file, $filename);
 
 
             Log::info('Image uploaded:', ['filename' => $filename]);
@@ -171,7 +171,7 @@ class ArtikelController extends Controller
             'konten' => $request->input('konten'),
             'tgl_published' => $tgl_published,
             'nama_published' => Auth::user()->name,
-            'gambar' => $filename,
+            'gambar' => $path,
         ]);
 
         return redirect()->route('Artikel.index')->with('success', 'Artikel berhasil diperbarui');

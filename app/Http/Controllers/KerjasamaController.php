@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kerjasama;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KerjasamaController extends Controller
 {
@@ -39,12 +40,14 @@ public function index2()
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('storage/upload/artikel'), $filename);
+            $path = 'kerjasama/' . $filename;
+
+            Storage::drive('public')->put($path, file_get_contents($file));
         }
 
         Kerjasama::create([
             'nama_instansi' => $request->nama_instansi,
-            'gambar' => $filename,
+            'gambar' => $path,
         ]);
 
         return redirect()->route('kerjasama.index')->with('success', 'Data berhasil ditambahkan!');
