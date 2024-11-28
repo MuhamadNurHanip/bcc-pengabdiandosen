@@ -100,7 +100,7 @@
                             <td class="px-4 py-3">{{ $kontak->nama_aplikasi }}</td>
                             <td class="px-4 py-3"><a href="{{ $kontak->tautan }}">{{ $kontak->tautan }}</a></td>
                             <td class="px-4 py-3">
-                                <img src="{{ asset('images/' . $kontak->gambar) }}" alt="Product Image" class="w-16 md:w-24">
+                                <img src="{{ asset('storage/upload/artikel' . $kontak->gambar) }}" alt="Product Image" class="w-16 md:w-24">
                             </td>
                             <td class="px-4 py-3 flex items-center">
                                 <button id="actionsDropdownButton-{{ $kontak->id }}" data-dropdown-toggle="actionsDropdown-{{ $kontak->id }}" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700" type="button">

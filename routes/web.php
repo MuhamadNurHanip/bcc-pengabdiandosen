@@ -63,6 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
     Route::put('admin/produk/{id}', [ProdukController::class, 'update'])->name('produk.update');
     Route::delete('admin/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
+    Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
 
     Route::get('admin/kategori', [KategoriController::class, 'index'])->name('kategori.index');
     Route::post('admin/kategori', [KategoriController::class, 'store'])->name('kategori.store');

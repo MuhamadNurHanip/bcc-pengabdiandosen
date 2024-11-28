@@ -1,6 +1,24 @@
-<x-app-layout>
-    <x-layout>
-        @if (session()->has('success'))
+<?php if (isset($component)) { $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54 = $attributes; } ?>
+<?php $component = App\View\Components\AppLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('app-layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AppLayout::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+    <?php if (isset($component)) { $__componentOriginal1f9e5f64f242295036c059d9dc1c375c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal1f9e5f64f242295036c059d9dc1c375c = $attributes; } ?>
+<?php $component = App\View\Components\Layout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\Layout::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+        <?php if(session()->has('success')): ?>
             <div id="alert-2"
                 class="flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
                 role="alert">
@@ -11,7 +29,8 @@
                 </svg>
                 <span class="sr-only">Info</span>
                 <div class="ms-3 text-sm font-medium">
-                    {{ session('success') }}
+                    <?php echo e(session('success')); ?>
+
                 </div>
                 <button type="button"
                     class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
@@ -23,7 +42,7 @@
                     </svg>
                 </button>
             </div>
-        @endif
+        <?php endif; ?>
         <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-3 md:space-x-2 rtl:space-x-reverse">
                 <li>
@@ -43,9 +62,9 @@
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 p-4">
 
-                {{-- search --}}
+                
                 <div class="flex items-center w-full">
-                    <form action="{{ route('artikel.search') }}" method="GET"
+                    <form action="<?php echo e(route('artikel.search')); ?>" method="GET"
                         class="flex items-center w-full max-w-md space-x-2">
                         <div class="relative flex-grow">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -56,7 +75,7 @@
                                 </svg>
                             </div>
                             <input type="text" name="query" placeholder="Cari Artikel..."
-                                value="{{ request()->query('query') }}"
+                                value="<?php echo e(request()->query('query')); ?>"
                                 class="block w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </div>
                         <button type="submit"
@@ -65,13 +84,13 @@
                         </button>
                     </form>
                 </div>
-                {{-- end search --}}
+                
 
 
                 <div
                     class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                     <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                        <a href="{{ route('Artikel.create')}}" class="flex items-center justify-center text-white bg-amber-500 hover:bg-amber-400 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                        <a href="<?php echo e(route('Artikel.create')); ?>" class="flex items-center justify-center text-white bg-amber-500 hover:bg-amber-400 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
                             <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                             </svg>
@@ -96,32 +115,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($artikels as $artikel)
+                        <?php $__currentLoopData = $artikels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $artikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr class="border-b dark:border-gray-700">
 
                                 <td class="px-4 py-3">
-                                    {{ ($artikels->currentPage() - 1) * $artikels->perPage() + $loop->iteration }}</td>
-                                <td class="px-4 py-3">{{ $artikel->judul }}</td>
+                                    <?php echo e(($artikels->currentPage() - 1) * $artikels->perPage() + $loop->iteration); ?></td>
+                                <td class="px-4 py-3"><?php echo e($artikel->judul); ?></td>
                                 <td class="px-4 py-3" style="max-width: 300px; word-wrap: break-word; text-align: justify;">
-                                    {{ strip_tags($artikel->konten) }}
+                                    <?php echo e(strip_tags($artikel->konten)); ?>
+
                                 </td>
                                 <td class="px-4 py-3" style="display: none;">
-                                    <input type="hidden" name="tgl_published" value="{{ $artikel->tgl_published }}">
-                                    {{ \Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('dddd, D MMMM YYYY') }}
+                                    <input type="hidden" name="tgl_published" value="<?php echo e($artikel->tgl_published); ?>">
+                                    <?php echo e(\Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('dddd, D MMMM YYYY')); ?>
+
                                 </td>
                                 <td class="px-4 py-3" style="display: none;">
                                     <input type="hidden" name="nama_published"
-                                        value="{{ $artikel->nama_published }}">
-                                    {{ $artikel->nama_published }}
+                                        value="<?php echo e($artikel->nama_published); ?>">
+                                    <?php echo e($artikel->nama_published); ?>
+
                                 </td>
 
                                 <td class="px-4 py-3">
-                                <img src="{{ asset('storage/' . $artikel->gambar) }}" alt="Image"
+                                <img src="<?php echo e(asset('storage/' . $artikel->gambar)); ?>" alt="Image"
                                     class="w-16 md:w-24">
                             </td>
                                 <td class="px-4 py-3 flex items-center">
-                                    <button id="actionsDropdownButton-{{ $artikel->id }}"
-                                        data-dropdown-toggle="actionsDropdown-{{ $artikel->id }}"
+                                    <button id="actionsDropdownButton-<?php echo e($artikel->id); ?>"
+                                        data-dropdown-toggle="actionsDropdown-<?php echo e($artikel->id); ?>"
                                         class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700"
                                         type="button">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -131,23 +153,23 @@
                                         </svg>
                                     </button>
 
-                                    <div id="actionsDropdown-{{ $artikel->id }}" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="actionsDropdownButton-{{ $artikel->id }}">
+                                    <div id="actionsDropdown-<?php echo e($artikel->id); ?>" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="actionsDropdownButton-<?php echo e($artikel->id); ?>">
                                             <li>
-                                                <a href="{{ route('Artikel.edit', $artikel->id) }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                                <a href="<?php echo e(route('Artikel.edit', $artikel->id)); ?>" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                             </li>
                                         </ul>
                                         <div class="py-1">
-                                            <form action=" {{ route('Artikel.destroy', $artikel->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus Artikel ini?');">
-                                                @csrf
-                                                @method('DELETE')
+                                            <form action=" <?php echo e(route('Artikel.destroy', $artikel->id)); ?>" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus Artikel ini?');">
+                                                <?php echo csrf_field(); ?>
+                                                <?php echo method_field('DELETE'); ?>
                                                 <button type="submit" class="block w-full text-left py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</button>
                                             </form>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
             </div>
@@ -156,19 +178,20 @@
                 <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
                     Menampilkan
                     <span class="font-semibold text-gray-900 dark:text-white">
-                        @if ($artikels->count())
-                            {{ $artikels->firstItem() }}-{{ $artikels->lastItem() }}
-                        @else
+                        <?php if($artikels->count()): ?>
+                            <?php echo e($artikels->firstItem()); ?>-<?php echo e($artikels->lastItem()); ?>
+
+                        <?php else: ?>
                             0-0
-                        @endif
+                        <?php endif; ?>
                     </span>
                     dari
-                    <span class="font-semibold text-gray-900 dark:text-white">{{ $artikels->total() }}</span>
+                    <span class="font-semibold text-gray-900 dark:text-white"><?php echo e($artikels->total()); ?></span>
                 </span>
 
                 <!-- Dynamic Pagination Links -->
                 <div>
-                    {{ $artikels->links() }} <!-- Menampilkan link navigasi halaman -->
+                    <?php echo e($artikels->links()); ?> <!-- Menampilkan link navigasi halaman -->
                 </div>
             </nav>
 
@@ -216,5 +239,23 @@
                 }
             });
         </script>
-    </x-layout>
-</x-app-layout>
+     <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal1f9e5f64f242295036c059d9dc1c375c)): ?>
+<?php $attributes = $__attributesOriginal1f9e5f64f242295036c059d9dc1c375c; ?>
+<?php unset($__attributesOriginal1f9e5f64f242295036c059d9dc1c375c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal1f9e5f64f242295036c059d9dc1c375c)): ?>
+<?php $component = $__componentOriginal1f9e5f64f242295036c059d9dc1c375c; ?>
+<?php unset($__componentOriginal1f9e5f64f242295036c059d9dc1c375c); ?>
+<?php endif; ?>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54)): ?>
+<?php $attributes = $__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
+<?php unset($__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54)): ?>
+<?php $component = $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
+<?php unset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
+<?php endif; ?><?php /**PATH C:\laragon\www\bccrafts\resources\views/Artikel/index.blade.php ENDPATH**/ ?>

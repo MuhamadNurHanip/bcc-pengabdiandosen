@@ -36,13 +36,16 @@ public function index2()
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:11048',
             'tautan' => 'required|url', // Validasi tautan
         ]);
-
-        $imageName = time().'.'.$request->gambar->extension();
-        $request->gambar->move(public_path('images'), $imageName);
+        
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('storage/upload/artikel'), $filename);
+        }
 
         Kontak::create([
             'nama_aplikasi' => $request->nama_aplikasi,
-            'gambar' => $imageName,
+            'gambar' => $filename,
             'tautan' => $request->tautan, // Simpan tautan
         ]);
 
@@ -68,12 +71,12 @@ public function index2()
 
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika ada
-            if ($kontak->gambar && file_exists(public_path('images/'.$kontak->gambar))) {
-                unlink(public_path('images/'.$kontak->gambar));
+            if ($kontak->gambar && file_exists(public_path('artikel'.$kontak->gambar))) {
+                unlink(public_path('storage/upload/artikel'.$kontak->gambar));
             }
 
             $imageName = time().'.'.$request->gambar->extension();
-            $request->gambar->move(public_path('images'), $imageName);
+            $request->gambar->move(public_path('artikel'), $imageName);
 
             $kontak->gambar = $imageName;
         }

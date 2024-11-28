@@ -36,12 +36,15 @@ public function index2()
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:11048',
         ]);
 
-        $imageName = time().'.'.$request->gambar->extension();
-        $request->gambar->move(public_path('images'), $imageName);
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('storage/upload/artikel'), $filename);
+        }
 
         Kerjasama::create([
             'nama_instansi' => $request->nama_instansi,
-            'gambar' => $imageName,
+            'gambar' => $filename,
         ]);
 
         return redirect()->route('kerjasama.index')->with('success', 'Data berhasil ditambahkan!');
@@ -65,12 +68,12 @@ public function index2()
 
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika ada
-            if ($kerjasama->gambar && file_exists(public_path('images/'.$kerjasama->gambar))) {
-                unlink(public_path('images/'.$kerjasama->gambar));
+            if ($kerjasama->gambar && file_exists(public_path('artikel'.$kerjasama->gambar))) {
+                unlink(public_path('artikel'.$kerjasama->gambar));
             }
 
             $imageName = time().'.'.$request->gambar->extension();
-            $request->gambar->move(public_path('images'), $imageName);
+            $request->gambar->move(public_path('storage/upload/artikel'), $imageName);
 
             $kerjasama->gambar = $imageName;
         }

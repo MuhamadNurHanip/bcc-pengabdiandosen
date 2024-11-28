@@ -41,7 +41,7 @@
                 <div class="mb-4">
                     <label for="image" class="block text-gray-700">Gambar:</label>
                     <input type="file" id="image" name="gambar" value="{{ $kerjasama->gambar }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    <img src="{{ asset('images/' . $kerjasama->gambar) }}" alt="Produk Image" class="mt-2 w-36 h-36">
+                    <img src="{{ asset('storage/public/artikel' . $kerjasama->gambar) }}" alt="Produk Image" class="mt-2 w-36 h-36">
                 </div>
 
                 <div class="flex items-center justify-between">

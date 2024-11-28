@@ -98,19 +98,24 @@ class ArtikelController extends Controller
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('storage/upload/artikel'), $filename);
-            Log::info('Image uploaded:', ['filename' => $filename]);
+            $path = 'artikel/' . $filename;
+            // Storage::disk('public')->put($path, file_get_contents($file));
+            Storage::drive('public')->put($path, file_get_contents($file));
+            // $url = Storage::url($path);
+
+            Log::info('Image uploaded:', ['path' => $path, 'filename' => $filename]);
         } else {
             Log::warning('No image uploaded');
             return back()->withErrors(['gambar' => 'Gambar harus diunggah'])->withInput();
         }
+
 
         $artikel = new Artikel;
         $artikel->judul = $request->input('judul');
         $artikel->konten = $request->input('konten');
         $artikel->tgl_published = $tgl_published;
         $artikel->nama_published = $namaPublished;
-        $artikel->gambar = $filename;
+        $artikel->gambar = $path;
 
         $artikel->save();
         Log::info('Artikel saved:', ['judul' => $artikel->judul, 'id' => $artikel->id]);
@@ -140,18 +145,33 @@ class ArtikelController extends Controller
             return back()->withErrors(['tgl_published' => 'Format tanggal tidak valid'])->withInput();
         }
 
-         if ($request->hasFile('gambar')) {
+        if ($request->hasFile('gambar')) {
+
+            $request->validate([
+                'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+
+            if ($artikel->gambar && Storage::disk('local')->exists('upload/artikel/' . $artikel->gambar)) {
+                Storage::disk('local')->delete('upload/artikel/' . $artikel->gambar);
+            }
+
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('storage/upload/artikel'), $filename);
+            $path = Storage::disk('local')->putFileAs('upload/artikel', $file, $filename);
+
+
             Log::info('Image uploaded:', ['filename' => $filename]);
-        } 
+        } else {
+            $filename = $artikel->gambar;
+        }
 
         $artikel->update([
             'judul' => $request->input('judul'),
             'konten' => $request->input('konten'),
             'tgl_published' => $tgl_published,
             'nama_published' => Auth::user()->name,
+            'gambar' => $filename,
         ]);
 
         return redirect()->route('Artikel.index')->with('success', 'Artikel berhasil diperbarui');
@@ -172,13 +192,6 @@ class ArtikelController extends Controller
         return redirect()->route('Artikel.index')->with('success', 'Artikel berhasil dihapus');
     }
 
-    public function deleteAll()
-    {
-        Artikel::truncate();
-
-        return redirect()->route('Artikel.index')->with('success', 'Semua data berhasil dihapus');
-    }
-
     public function search(Request $request)
     {
         $query = $request->input('query');
@@ -189,59 +202,59 @@ class ArtikelController extends Controller
         return view('Artikel.index', compact('artikels', 'query'));
     }
 
-    // public function uploadImageSummernote(Request $request, $type)
-    // {
-    //     $post = $request->all();
-    //     $post['type'] = 'summernote';
+    public function uploadImageSummernote(Request $request, $type)
+    {
+        $post = $request->all();
+        $post['type'] = 'summernote';
 
-    //     // Validasi ukuran file (maksimum 5MB)
-    //     $size = $request->file->getSize();
-    //     if ($size > 10000000) {
-    //         return ['status' => false, 'messages' => ['Image Size Exceeded 10MB']];
-    //     }
+        // Validasi ukuran file (maksimum 5MB)
+        $size = $request->file->getSize();
+        if ($size > 10000000) {
+            return ['status' => false, 'messages' => ['Image Size Exceeded 10MB']];
+        }
 
-    //     // Tentukan ekstensi dan nama file
-    //     $ext = $request->file->getClientOriginalExtension();
-    //     $filename = 'summernote_image_' . time() . '.' . $ext;
-    //     $path = 'upload/' . $filename;
+        // Tentukan ekstensi dan nama file
+        $ext = $request->file->getClientOriginalExtension();
+        $filename = 'summernote_image_' . time() . '.' . $ext;
+        $path = 'upload/' . $filename;
 
-    //     // Pindahkan file ke direktori public/upload
-    //     $request->file->move(public_path('upload'), $filename);
+        // Pindahkan file ke direktori public/upload
+        $request->file->move(public_path('upload'), $filename);
 
-    //     // Cek apakah file berhasil disimpan
-    //     if (file_exists(public_path($path))) {
-    //         return [
-    //             "status" => "success",
-    //             "path" => $path,
-    //             "image" => $filename,
-    //             "image_url" => url($path)
-    //         ];
-    //     } else {
-    //         return [
-    //             "status" => "fail"
-    //         ];
-    //     }
-    // }
+        // Cek apakah file berhasil disimpan
+        if (file_exists(public_path($path))) {
+            return [
+                "status" => "success",
+                "path" => $path,
+                "image" => $filename,
+                "image_url" => url($path)
+            ];
+        } else {
+            return [
+                "status" => "fail"
+            ];
+        }
+    }
 
-    // public function deleteImageSummernote(Request $request, $type)
-    // {
-    //     // Pastikan 'target' ada di request
-    //     if (!$request->has('target')) {
-    //         return response()->json(['status' => false, 'message' => 'Target tidak ditemukan'], 400);
-    //     }
+    public function deleteImageSummernote(Request $request, $type)
+    {
+        // Pastikan 'target' ada di request
+        if (!$request->has('target')) {
+            return response()->json(['status' => false, 'message' => 'Target tidak ditemukan'], 400);
+        }
 
-    //     // Memisahkan URL dan mengambil nama file dari 'target'
-    //     $arrayUrl = array_filter(explode('/', $request->target));
-    //     $fileName = end($arrayUrl);
-    //     $path = public_path('upload/' . $fileName);
+        // Memisahkan URL dan mengambil nama file dari 'target'
+        $arrayUrl = array_filter(explode('/', $request->target));
+        $fileName = end($arrayUrl);
+        $path = public_path('upload/' . $fileName);
 
-    //     // Cek apakah file ada dan hapus
-    //     if (file_exists($path)) {
-    //         unlink($path); // Menghapus file
+        // Cek apakah file ada dan hapus
+        if (file_exists($path)) {
+            unlink($path); // Menghapus file
 
-    //         return response()->json(['status' => true, 'message' => 'Gambar berhasil dihapus']);
-    //     } else {
-    //         return response()->json(['status' => false, 'message' => 'Gambar tidak ditemukan'], 404);
-    //     }
-    // }
+            return response()->json(['status' => true, 'message' => 'Gambar berhasil dihapus']);
+        } else {
+            return response()->json(['status' => false, 'message' => 'Gambar tidak ditemukan'], 404);
+        }
+    }
 }

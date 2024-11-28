@@ -98,7 +98,7 @@
                                 {{ ($kerjasamas->currentPage() - 1) * $kerjasamas->perPage() + $loop->iteration }}</td>
                             <td class="px-4 py-3">{{ $kerjasama->nama_instansi }}</td>
                             <td class="px-4 py-3">
-                                <img src="{{ asset('images/' . $kerjasama->gambar) }}" alt="Product Image" class="w-16 md:w-24">
+                                <img src="{{ asset('storage/public/artikel' . $kerjasama->gambar) }}" alt="Product Image" class="w-16 md:w-24">
                             </td>
                             <td class="px-4 py-3 flex items-center">
                                 <button id="actionsDropdownButton-{{ $kerjasama->id }}" data-dropdown-toggle="actionsDropdown-{{ $kerjasama->id }}" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700" type="button">
