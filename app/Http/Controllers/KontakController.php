@@ -42,7 +42,7 @@ public function index2()
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $path = 'kontak/' . $filename;
-            Storage::drive('public')->put($path, file_get_contents($file));
+            Storage::disk('public')->put($path, file_get_contents($file));
         }
 
         Kontak::create([

@@ -42,7 +42,7 @@ public function index2()
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $path = 'kerjasama/' . $filename;
 
-            Storage::drive('public')->put($path, file_get_contents($file));
+            Storage::disk('public')->put($path, file_get_contents($file));
         }
 
         Kerjasama::create([
