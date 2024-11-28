@@ -184,15 +184,15 @@
 
             <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-               {{-- artikel --}}
+                {{-- artikel --}}
                 @foreach ($artikels->take(3) as $artikel)
                     <a class="group flex flex-col focus:outline-none" href="{{ route('Artikel.detail', $artikel->id) }}">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-                            <img class="absolute top-0 start-0 object-cover w-full h-48 md:h-64 lg:h-80 group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
+                            <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
                                 src="{{ asset('storage/' . $artikel->gambar) }}" alt="Blog Image">
 
                             <span
-                                class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl">
+                                class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">
                                 {{ \Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('D MMMM, YYYY') }}
                             </span>
                         </div>

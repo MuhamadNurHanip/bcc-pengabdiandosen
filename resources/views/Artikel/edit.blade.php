@@ -55,7 +55,7 @@
                 <label for="gambar" class="block text-gray-700">Gambar:</label>
                 <input type="file" id="gambar" name="gambar"
                     class="appearance-none border rounded w-full mb-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                <img src="{{ asset('storage/upload/artikel/' . $artikel->gambar) }}" alt="Artikel Image" class="mt-2 w-[300px]" width="450" height="450">
+                <img src="{{ asset('storage/' . $artikel->gambar) }}" alt="Artikel Image" class="mt-2 w-[300px]" width="450" height="450">
             </div>
             <div class="flex items-center justify-between">
                 <button type="submit"

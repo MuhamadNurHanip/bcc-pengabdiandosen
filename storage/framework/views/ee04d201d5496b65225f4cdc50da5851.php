@@ -187,11 +187,11 @@
 
             <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-               
+                
                 <?php $__currentLoopData = $artikels->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $artikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <a class="group flex flex-col focus:outline-none" href="<?php echo e(route('Artikel.detail', $artikel->id)); ?>">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-                            <img class="absolute top-0 start-0 object-cover w-full h-48 md:h-64 lg:h-80 group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
+                            <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
                                 src="<?php echo e(asset('storage/' . $artikel->gambar)); ?>" alt="Blog Image">
 
                             <span
