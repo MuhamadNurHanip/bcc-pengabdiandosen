@@ -669,3 +669,191 @@
 [2024-11-28 10:02:49] local.INFO: Locale in session: id  
 [2024-11-28 10:02:54] local.INFO: Locale in session: id  
 [2024-11-28 10:03:02] local.INFO: Locale in session: id  
+[2024-11-28 10:07:52] local.INFO: Locale in session: id  
+[2024-11-28 10:12:48] local.INFO: Locale in session: id  
+[2024-11-28 10:13:03] local.INFO: Locale in session: id  
+[2024-11-28 10:13:08] local.INFO: Locale in session: id  
+[2024-11-28 10:13:20] local.INFO: Locale in session: id  
+[2024-11-28 10:13:20] local.INFO: Locale in session: id  
+[2024-11-28 10:13:20] local.INFO: Locale in session: id  
+[2024-11-28 10:13:20] local.INFO: Locale in session: id  
+[2024-11-28 10:13:21] local.INFO: Locale in session: id  
+[2024-11-28 10:13:24] local.INFO: Locale in session: id  
+[2024-11-28 10:13:25] local.INFO: Locale in session: id  
+[2024-11-28 10:13:25] local.INFO: Locale in session: id  
+[2024-11-28 10:13:27] local.INFO: Locale in session: id  
+[2024-11-28 10:13:35] local.INFO: Locale in session: id  
+[2024-11-28 10:13:36] local.INFO: Locale in session: id  
+[2024-11-28 10:13:37] local.INFO: Locale in session: id  
+[2024-11-28 10:13:38] local.INFO: Locale in session: id  
+[2024-11-28 10:15:59] local.INFO: Locale in session: id  
+[2024-11-28 10:15:59] local.INFO: Locale in session: id  
+[2024-11-28 10:16:00] local.INFO: Locale in session: id  
+[2024-11-28 10:16:00] local.INFO: Locale in session: id  
+[2024-11-28 10:16:01] local.INFO: Locale in session: id  
+[2024-11-28 10:16:01] local.INFO: Locale in session: id  
+[2024-11-28 10:16:10] local.INFO: Locale in session: id  
+[2024-11-28 10:16:11] local.INFO: Locale in session: id  
+[2024-11-28 10:16:11] local.INFO: Locale in session: id  
+[2024-11-28 10:16:12] local.INFO: Locale in session: id  
+[2024-11-28 10:16:14] local.INFO: Locale in session: id  
+[2024-11-28 10:16:14] local.INFO: Locale in session: id  
+[2024-11-28 10:16:14] local.INFO: Locale in session: id  
+[2024-11-28 10:16:15] local.INFO: Locale in session: id  
+[2024-11-28 10:16:15] local.INFO: Locale in session: id  
+[2024-11-28 10:16:17] local.INFO: Locale in session: id  
+[2024-11-28 10:16:17] local.INFO: Locale in session: id  
+[2024-11-28 10:16:26] local.INFO: Locale in session: id  
+[2024-11-28 10:16:26] local.INFO: Locale in session: id  
+[2024-11-28 10:16:27] local.INFO: Locale in session: id  
+[2024-11-28 10:16:27] local.INFO: Locale in session: id  
+[2024-11-28 10:17:11] local.INFO: Locale in session: id  
+[2024-11-28 10:17:12] local.INFO: Locale in session: id  
+[2024-11-28 10:17:13] local.INFO: Locale in session: id  
+[2024-11-28 10:17:14] local.INFO: Locale in session: id  
+[2024-11-28 10:17:14] local.INFO: Locale in session: id  
+[2024-11-28 10:17:15] local.INFO: Locale in session: id  
+[2024-11-28 10:17:26] local.INFO: Locale in session: id  
+[2024-11-28 10:17:29] local.INFO: Locale in session: id  
+[2024-11-28 10:17:33] local.INFO: Locale in session: id  
+[2024-11-28 10:17:34] local.INFO: Locale in session: id  
+[2024-11-28 10:17:34] local.INFO: Locale in session: id  
+[2024-11-28 10:17:35] local.INFO: Locale in session: id  
+[2024-11-28 10:17:35] local.INFO: Locale in session: id  
+[2024-11-28 10:17:36] local.INFO: Locale in session: id  
+[2024-11-28 10:17:39] local.INFO: Locale in session: id  
+[2024-11-28 10:17:39] local.INFO: Locale in session: id  
+[2024-11-28 10:17:39] local.INFO: Locale in session: id  
+[2024-11-28 10:17:40] local.INFO: Locale in session: id  
+[2024-11-28 10:17:40] local.INFO: Locale in session: id  
+[2024-11-28 10:17:40] local.INFO: Locale in session: id  
+[2024-11-28 10:17:40] local.INFO: Locale in session: id  
+[2024-11-28 10:17:40] local.INFO: Locale in session: id  
+[2024-11-28 10:17:41] local.INFO: Locale in session: id  
+[2024-11-28 10:17:41] local.INFO: Locale in session: id  
+[2024-11-28 10:17:41] local.INFO: Locale in session: id  
+[2024-11-28 10:17:41] local.INFO: Locale in session: id  
+[2024-11-28 10:17:41] local.INFO: Locale in session: id  
+[2024-11-28 10:17:42] local.INFO: Locale in session: id  
+[2024-11-28 10:17:42] local.INFO: Locale in session: id  
+[2024-11-28 10:17:42] local.INFO: Locale in session: id  
+[2024-11-28 10:17:43] local.INFO: Locale in session: id  
+[2024-11-28 10:18:44] local.INFO: Locale in session: id  
+[2024-11-28 10:18:44] local.INFO: Data request diterima: {"_token":"RmVmkZIsSHhYjQwQHogwmptY1Kz0p3Nzs3kSNLQX","nama":"joko","bahan":"-\tSpons Eva 3ml -\tKain Peles, Benang -\tPoring Kain Katun -\tManik 11 O & Manik 6 O, Piringan","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","kategori_id":"2","deskripsi":"adasdasdadsasdadsdds","image1":{"Illuminate\\Http\\UploadedFile":"C:\\Users\\lenovo\\AppData\\Local\\Temp\\php148C.tmp"}} 
+[2024-11-28 10:18:44] local.INFO: Validasi berhasil: {"nama":"joko","bahan":"-\tSpons Eva 3ml -\tKain Peles, Benang -\tPoring Kain Katun -\tManik 11 O & Manik 6 O, Piringan","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","deskripsi":"adasdasdadsasdadsdds","kategori_id":"2","image1":{"Illuminate\\Http\\UploadedFile":"C:\\Users\\lenovo\\AppData\\Local\\Temp\\php148C.tmp"}} 
+[2024-11-28 10:18:44] local.INFO: Data produk yang akan disimpan: {"nama":"JOKO","bahan":"-\tSpons Eva 3ml -\tKain Peles, Benang -\tPoring Kain Katun -\tManik 11 O & Manik 6 O, Piringan","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","deskripsi":"adasdasdadsasdadsdds","kategori_id":"2"} 
+[2024-11-28 10:18:44] local.INFO: Image uploaded: {"image":"image1","path":"produk/1732789124_image1.jpg","filename":"1732789124_image1.jpg"} 
+[2024-11-28 10:18:44] local.INFO: image2 not uploaded  
+[2024-11-28 10:18:44] local.INFO: image3 not uploaded  
+[2024-11-28 10:18:44] local.INFO: image4 not uploaded  
+[2024-11-28 10:18:44] local.INFO: Produk berhasil disimpan: {"nama":"JOKO","bahan":"-\tSpons Eva 3ml -\tKain Peles, Benang -\tPoring Kain Katun -\tManik 11 O & Manik 6 O, Piringan","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","deskripsi":"adasdasdadsasdadsdds","kategori_id":"2","image1":"produk/1732789124_image1.jpg","updated_at":"2024-11-28T10:18:44.000000Z","created_at":"2024-11-28T10:18:44.000000Z","id":8} 
+[2024-11-28 10:18:44] local.INFO: Locale in session: id  
+[2024-11-28 10:18:45] local.INFO: Locale in session: id  
+[2024-11-28 10:18:45] local.INFO: Locale in session: id  
+[2024-11-28 10:18:45] local.INFO: Locale in session: id  
+[2024-11-28 10:21:03] local.INFO: Locale in session: id  
+[2024-11-28 10:21:33] local.INFO: Locale in session: id  
+[2024-11-28 10:21:37] local.INFO: Locale in session: id  
+[2024-11-28 10:21:43] local.INFO: Locale in session: id  
+[2024-11-28 10:21:47] local.INFO: Locale in session: id  
+[2024-11-28 10:21:48] local.INFO: Locale in session: id  
+[2024-11-28 10:21:48] local.INFO: Locale in session: id  
+[2024-11-28 10:21:53] local.INFO: Locale in session: id  
+[2024-11-28 10:21:58] local.INFO: Locale in session: id  
+[2024-11-28 10:21:58] local.INFO: Image 3 not uploaded  
+[2024-11-28 10:21:58] local.INFO: Image 4 not uploaded  
+[2024-11-28 10:21:59] local.INFO: Locale in session: id  
+[2024-11-28 10:23:04] local.INFO: Locale in session: id  
+[2024-11-28 10:23:05] local.INFO: Locale in session: id  
+[2024-11-28 10:23:05] local.INFO: Locale in session: id  
+[2024-11-28 10:23:06] local.INFO: Locale in session: id  
+[2024-11-28 10:23:06] local.INFO: Locale in session: id  
+[2024-11-28 10:23:06] local.INFO: Locale in session: id  
+[2024-11-28 10:23:06] local.INFO: Locale in session: id  
+[2024-11-28 11:09:16] local.INFO: Locale in session: id  
+[2024-11-28 11:09:17] local.INFO: Locale in session: id  
+[2024-11-28 11:09:57] local.INFO: Locale in session: id  
+[2024-11-28 11:10:03] local.INFO: Locale in session: id  
+[2024-11-28 11:10:04] local.INFO: Locale in session: id  
+[2024-11-28 11:10:09] local.INFO: Locale in session: id  
+[2024-11-28 11:10:59] local.INFO: Locale in session: id  
+[2024-11-28 11:12:12] local.INFO: Locale in session: id  
+[2024-11-28 11:12:39] local.INFO: Locale in session: id  
+[2024-11-28 11:12:39] local.INFO: Data request diterima: {"_token":"RmVmkZIsSHhYjQwQHogwmptY1Kz0p3Nzs3kSNLQX","nama":"Kalung emas","bahan":"Manik Manik","ukuran":"adalah kalung 12","kategori_id":"1","deskripsi":"aoklsja dkla djakla","image1":{"Illuminate\\Http\\UploadedFile":"C:\\Users\\lenovo\\AppData\\Local\\Temp\\php7E25.tmp"}} 
+[2024-11-28 11:12:39] local.INFO: Validasi berhasil: {"nama":"Kalung emas","bahan":"Manik Manik","ukuran":"adalah kalung 12","deskripsi":"aoklsja dkla djakla","kategori_id":"1","image1":{"Illuminate\\Http\\UploadedFile":"C:\\Users\\lenovo\\AppData\\Local\\Temp\\php7E25.tmp"}} 
+[2024-11-28 11:12:39] local.INFO: Data produk yang akan disimpan: {"nama":"KALUNG EMAS","bahan":"Manik Manik","ukuran":"adalah kalung 12","deskripsi":"aoklsja dkla djakla","kategori_id":"1"} 
+[2024-11-28 11:12:39] local.INFO: Image uploaded: {"image":"image1","path":"produk/1732792359_image1.png","filename":"1732792359_image1.png"} 
+[2024-11-28 11:12:39] local.INFO: image2 not uploaded  
+[2024-11-28 11:12:39] local.INFO: image3 not uploaded  
+[2024-11-28 11:12:39] local.INFO: image4 not uploaded  
+[2024-11-28 11:12:39] local.INFO: Produk berhasil disimpan: {"nama":"KALUNG EMAS","bahan":"Manik Manik","ukuran":"adalah kalung 12","deskripsi":"aoklsja dkla djakla","kategori_id":"1","image1":"produk/1732792359_image1.png","updated_at":"2024-11-28T11:12:39.000000Z","created_at":"2024-11-28T11:12:39.000000Z","id":9} 
+[2024-11-28 11:12:39] local.INFO: Locale in session: id  
+[2024-11-28 11:12:44] local.INFO: Locale in session: id  
+[2024-11-28 11:13:18] local.INFO: Locale in session: id  
+[2024-11-28 11:13:19] local.INFO: Locale in session: id  
+[2024-11-28 11:13:20] local.INFO: Locale in session: id  
+[2024-11-28 11:13:24] local.INFO: Locale in session: id  
+[2024-11-28 11:13:25] local.INFO: Locale in session: id  
+[2024-11-28 11:13:32] local.INFO: Locale in session: id  
+[2024-11-28 11:13:32] local.INFO: Locale in session: id  
+[2024-11-28 11:13:36] local.INFO: Locale in session: id  
+[2024-11-28 11:13:37] local.INFO: Locale in session: id  
+[2024-11-28 11:13:38] local.INFO: Locale in session: id  
+[2024-11-28 11:13:48] local.INFO: Locale in session: id  
+[2024-11-28 11:13:48] local.INFO: Locale in session: id  
+[2024-11-28 11:14:43] local.INFO: Locale in session: id  
+[2024-11-28 11:14:44] local.INFO: Locale in session: id  
+[2024-11-28 11:17:15] local.INFO: Locale in session: id  
+[2024-11-28 11:17:24] local.INFO: Locale in session: id  
+[2024-11-28 11:17:25] local.INFO: Locale in session: id  
+[2024-11-28 11:17:28] local.INFO: Locale in session: id  
+[2024-11-28 11:17:29] local.INFO: Locale in session: id  
+[2024-11-28 11:17:34] local.INFO: Locale in session: id  
+[2024-11-28 11:17:34] local.INFO: Locale in session: id  
+[2024-11-28 11:18:13] local.INFO: Locale in session: id  
+[2024-11-28 11:18:27] local.INFO: Locale in session: id  
+[2024-11-28 11:18:28] local.INFO: Data request diterima: {"_token":"RmVmkZIsSHhYjQwQHogwmptY1Kz0p3Nzs3kSNLQX","nama":"Dompet Curvy","bahan":"Manik Manik","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","kategori_id":"2","deskripsi":"aaaaaaaaaaaaaa","image1":{"Illuminate\\Http\\UploadedFile":"C:\\Users\\lenovo\\AppData\\Local\\Temp\\phpCDC5.tmp"}} 
+[2024-11-28 11:18:28] local.INFO: Validasi berhasil: {"nama":"Dompet Curvy","bahan":"Manik Manik","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","deskripsi":"aaaaaaaaaaaaaa","kategori_id":"2","image1":{"Illuminate\\Http\\UploadedFile":"C:\\Users\\lenovo\\AppData\\Local\\Temp\\phpCDC5.tmp"}} 
+[2024-11-28 11:18:28] local.INFO: Data produk yang akan disimpan: {"nama":"DOMPET CURVY","bahan":"Manik Manik","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","deskripsi":"aaaaaaaaaaaaaa","kategori_id":"2"} 
+[2024-11-28 11:18:28] local.INFO: Image uploaded: {"image":"image1","path":"produk/1732792708_image1.jpg","filename":"1732792708_image1.jpg"} 
+[2024-11-28 11:18:28] local.INFO: image2 not uploaded  
+[2024-11-28 11:18:28] local.INFO: image3 not uploaded  
+[2024-11-28 11:18:28] local.INFO: image4 not uploaded  
+[2024-11-28 11:18:28] local.INFO: Produk berhasil disimpan: {"nama":"DOMPET CURVY","bahan":"Manik Manik","ukuran":"P : 25cm  T : 15 cm P : 23cm  T : 13 cm P : 20cm  T : 12 cm Tali Ukuran 110cm & 30cm","deskripsi":"aaaaaaaaaaaaaa","kategori_id":"2","image1":"produk/1732792708_image1.jpg","updated_at":"2024-11-28T11:18:28.000000Z","created_at":"2024-11-28T11:18:28.000000Z","id":10} 
+[2024-11-28 11:18:28] local.INFO: Locale in session: id  
+[2024-11-28 11:19:14] local.INFO: Locale in session: id  
+[2024-11-28 11:19:15] local.INFO: Locale in session: id  
+[2024-11-28 11:19:15] local.INFO: Locale in session: id  
+[2024-11-28 11:19:21] local.INFO: Locale in session: id  
+[2024-11-28 11:19:22] local.INFO: Locale in session: id  
+[2024-11-28 11:19:22] local.INFO: Locale in session: id  
+[2024-11-28 11:19:31] local.INFO: Locale in session: id  
+[2024-11-28 11:19:32] local.INFO: Locale in session: id  
+[2024-11-28 11:19:33] local.INFO: Locale in session: id  
+[2024-11-28 11:19:34] local.INFO: Locale in session: id  
+[2024-11-28 11:19:40] local.INFO: Locale in session: id  
+[2024-11-28 11:19:41] local.INFO: Locale in session: id  
+[2024-11-28 11:19:42] local.INFO: Locale in session: id  
+[2024-11-28 11:19:43] local.INFO: Locale in session: id  
+[2024-11-28 11:19:44] local.INFO: Locale in session: id  
+[2024-11-28 11:19:45] local.INFO: Locale in session: id  
+[2024-11-28 11:19:46] local.INFO: Locale in session: id  
+[2024-11-28 11:19:48] local.INFO: Locale in session: id  
+[2024-11-28 11:19:49] local.INFO: Locale in session: id  
+[2024-11-28 11:19:52] local.INFO: Locale in session: id  
+[2024-11-28 11:19:53] local.INFO: Locale in session: id  
+[2024-11-28 11:20:33] local.INFO: Locale in session: id  
+[2024-11-28 11:23:25] local.INFO: Locale in session: id  
+[2024-11-28 11:23:33] local.INFO: Locale in session: id  
+[2024-11-28 11:23:43] local.INFO: Locale in session: id  
+[2024-11-28 11:23:43] local.INFO: Locale in session: id  
+[2024-11-28 11:23:59] local.INFO: Locale in session: id  
+[2024-11-28 11:25:19] local.INFO: Locale in session: id  
+[2024-11-28 11:25:21] local.INFO: Locale in session: id  
+[2024-11-28 11:25:22] local.INFO: Locale in session: id  
+[2024-11-28 11:25:22] local.INFO: Locale in session: id  
+[2024-11-28 11:25:22] local.INFO: Locale in session: id  
+[2024-11-28 11:25:22] local.INFO: Locale in session: id  
+[2024-11-28 11:25:23] local.INFO: Locale in session: id  
+[2024-11-28 11:25:23] local.INFO: Locale in session: id  
+[2024-11-28 11:25:27] local.INFO: Locale in session: id  

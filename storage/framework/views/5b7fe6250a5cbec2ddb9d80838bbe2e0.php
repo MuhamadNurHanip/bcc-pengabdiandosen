@@ -118,7 +118,7 @@
                             <td class="px-4 py-3"><?php echo e($produk->bahan); ?></td>
                             <td class="px-4 py-3">
                                 <?php if($produk->image1): ?>
-                                <img src="<?php echo e(asset('storage/produk/' . $produk->image1)); ?>" alt="<?php echo e($produk->nama); ?>" style="max-width: 200px;">
+                                <img src="<?php echo e(asset('storage/' . $produk->image1)); ?>" alt="<?php echo e($produk->nama); ?>" style="max-width: 200px;">
                                 <?php endif; ?>
                             <td class="px-4 py-3"><?php echo e($produk->kategoris->nama_kategori); ?></td>
                             <td class="px-4 py-3 flex items-center justify-end">

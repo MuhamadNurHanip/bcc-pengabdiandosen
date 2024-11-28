@@ -99,7 +99,7 @@
                             <td class="px-4 py-3">{{ $produk->bahan }}</td>
                             <td class="px-4 py-3">
                                 @if($produk->image1)
-                                <img src="{{ asset('storage/produk/' . $produk->image1) }}" alt="{{ $produk->nama }}" style="max-width: 200px;">
+                                <img src="{{ asset('storage/' . $produk->image1) }}" alt="{{ $produk->nama }}" style="max-width: 200px;">
                                 @endif
                             <td class="px-4 py-3">{{ $produk->kategoris->nama_kategori }}</td>
                             <td class="px-4 py-3 flex items-center justify-end">

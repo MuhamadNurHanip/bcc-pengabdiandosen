@@ -83,7 +83,7 @@ class ProdukController extends Controller
 
         Log::info('Data produk yang akan disimpan:', $produk->toArray());
 
-        // 
+        
         $images = ['image1', 'image2', 'image3', 'image4'];
         foreach ($images as $image) {
             if ($request->hasFile($image)) {
@@ -162,39 +162,24 @@ class ProdukController extends Controller
         $produk->deskripsi = $validatedData['deskripsi'];
         $produk->kategori_id = $validatedData['kategori_id'];
 
-        // Proses penyimpanan gambar pertama
-        if ($request->hasFile('image1')) {
-            $image1 = $request->file('image1');
-            $imageName1 = time() . '_1.' . $image1->getClientOriginalExtension();
-            $image1->move(public_path('upload/produk'), $imageName1);
-            $produk->image1 = $imageName1;
-        }
-
-        // Proses penyimpanan gambar kedua
-        if ($request->hasFile('image2')) {
-            $image2 = $request->file('image2');
-            $imageName2 = time() . '_2.' . $image2->getClientOriginalExtension();
-            $image2->move(public_path('upload/produk'), $imageName2);
-            $produk->image2 = $imageName2;
-        }
-        if ($request->hasFile('image3')) {
-            $image3 = $request->file('image3');
-            $imageName3 = time() . '_3.' . $image3->getClientOriginalExtension();
-            $image3->move(public_path('upload/produk'), $imageName3);
-            $produk->image3 = $imageName3;
-            Log::info('Image 3 uploaded successfully: ' . $imageName3);
-        } else {
-            Log::info('Image 3 not uploaded');
-        }
-
-        if ($request->hasFile('image4')) {
-            $image4 = $request->file('image4');
-            $imageName4 = time() . '_4.' . $image4->getClientOriginalExtension();
-            $image4->move(public_path('upload/produk'), $imageName4);
-            $produk->image4 = $imageName4;
-            Log::info('Image 4 uploaded successfully: ' . $imageName4);
-        } else {
-            Log::info('Image 4 not uploaded');
+          
+        $images = ['image1', 'image2', 'image3', 'image4'];
+        foreach ($images as $image) {
+            if ($request->hasFile($image)) {
+                try {
+                    $file = $request->file($image);
+                    $filename = time() . '_' . $image . '.' . $file->getClientOriginalExtension();
+                    $path = 'produk/' . $filename;
+                    Storage::drive('public')->put($path, file_get_contents($file));
+                    $produk->$image = $path;
+                    Log::info('Image uploaded:', ['image' => $image, 'path' => $path, 'filename' => $filename]);
+                } catch (\Exception $e) {
+                    Log::error('Error uploading ' . $image . ':', ['error' => $e->getMessage()]);
+                    return back()->withErrors([$image => 'Gagal mengunggah gambar ' . $image])->withInput();
+                }
+            } else {
+                Log::info($image . ' not uploaded');
+            }
         }
 
         $produk->save();
