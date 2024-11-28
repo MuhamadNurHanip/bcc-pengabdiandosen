@@ -60,7 +60,7 @@ class ProdukController extends Controller
                 'nama' => 'required',
                 'bahan' => 'required',
                 'ukuran' => 'required',
-                'deskripsi' => 'required|min:5',
+                'deskripsi' => 'required|min:5|',
                 'kategori_id' => 'required|integer',
                 'image1' => 'required|image|mimes:jpeg,png,jpg,gif|max:12048',
                 'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -148,7 +148,7 @@ class ProdukController extends Controller
         $validatedData = $request->validate([
             'nama' => 'required',
             'bahan' => 'required',
-            'deskripsi' => 'required|min:5|max:150',
+            'deskripsi' => 'required|min:5|',
             'kategori_id' => 'required|integer',
             'image1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
