@@ -1,8 +1,6 @@
-@extends('layout.app')
+<?php $__env->startSection('title', 'BCC - Beranda'); ?>
 
-@section('title', 'BCC - Beranda')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <body class="bg-gray-100">
 
@@ -19,7 +17,8 @@
 
             <div class="relative container mx-auto px-6 py-32 text-center">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                    {{ __('message.jumbotron') }}
+                    <?php echo e(__('message.jumbotron')); ?>
+
 
 
                 </h1>
@@ -30,44 +29,46 @@
         <div class="container mx-auto px-6 py-8" id="produk">
             <!-- Our Categories -->
             <section class="container mx-auto px-6 py-3">
-                <h2 class="text-3xl font-bold mb-2 text-center">@lang('message.catalog')</h2>
+                <h2 class="text-3xl font-bold mb-2 text-center"><?php echo app('translator')->get('message.catalog'); ?></h2>
                 <div id="categories">
                     <!-- Kategori cards will be loaded here -->
                 </div>
             </section>
             <div class="flex overflow-x-auto space-x-4 -mx-2 overflow-hidden no-scrollbar">
-                @foreach ($produks as $produk)
+                <?php $__currentLoopData = $produks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $produk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div
                         class="max-w-xs flex-shrink-0 w-41 sm:w-48 md:w-44 lg:w-[250px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
                         <a href="#">
                             <img class="rounded-t-lg w-full h-36 object-cover"
-                                src="{{ asset('storage/app/public/produk/' . $produk->image1) }}"
-                                alt="{{ $produk->nama }}" />
+                                src="<?php echo e(asset('storage/app/public/produk/' . $produk->image1)); ?>"
+                                alt="<?php echo e($produk->nama); ?>" />
                         </a>
                         <div class="p-3">
                             <div
                                 class="mb-4 rounded-full w-auto bg-blue-800 py-0.5 px-2 border border-transparent text-xs text-white transition-all shadow-sm text-center">
-                                {{ $produk->kategori_translated ?? $produk->kategoris->nama_kategori }}
+                                <?php echo e($produk->kategori_translated ?? $produk->kategoris->nama_kategori); ?>
+
                             </div>
                             <a href="#">
                                 <h2 class="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $produk->nama_translated ?? $produk->nama }}</h2>
+                                    <?php echo e($produk->nama_translated ?? $produk->nama); ?></h2>
                             </a>
                             <p class="mb-[50px] text-sm text-gray-600 dark:text-gray-400">
-                                @php
+                                <?php
                                     $deskripsi = $produk->deskripsi_translated ?? $produk->deskripsi;
                                     $words = explode(' ', $deskripsi);
                                     $limitedWords = implode(' ', array_slice($words, 0, 10));
-                                @endphp
-                                {{ $limitedWords }}{{ count($words) > 10 ? '...' : '' }}</p>
+                                ?>
+                                <?php echo e($limitedWords); ?><?php echo e(count($words) > 10 ? '...' : ''); ?></p>
                         </div>
                         <!-- Tombol Detail Produk di posisi bawah kiri -->
-                        <a href="{{ route('produk.show', ['id' => Crypt::encryptString($produk->id)]) }}"
+                        <a href="<?php echo e(route('produk.show', ['id' => Crypt::encryptString($produk->id)])); ?>"
                             class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 mb-3 mt-8 px-3 rounded absolute bottom-0 left-0 m-3">
-                            <i class="fa fa-shopping-cart"></i>{{ __('message.detail_product') }}
+                            <i class="fa fa-shopping-cart"></i><?php echo e(__('message.detail_product')); ?>
+
                         </a>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
 
@@ -77,7 +78,8 @@
         <div class="mt-2 text-center">
             <button onclick="scrollRight()"
                 class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded">
-                {{ __('message.view_all') }}
+                <?php echo e(__('message.view_all')); ?>
+
             </button>
         </div>
 
@@ -176,35 +178,39 @@
         <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
             <!-- Title -->
             <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                <h2 class="text-3xl font-bold md:text-4xl md:leading-tight dark:text-white">{{ __('message.article') }}
+                <h2 class="text-3xl font-bold md:text-4xl md:leading-tight dark:text-white"><?php echo e(__('message.article')); ?>
+
                 </h2>
-                <p class="mt-1 text-gray-600 dark:text-neutral-400">{{ __('message.desc_article') }}</p>
+                <p class="mt-1 text-gray-600 dark:text-neutral-400"><?php echo e(__('message.desc_article')); ?></p>
             </div>
             <!-- End Title -->
 
             <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {{-- artikel --}}
-                @foreach ($artikels->take(3) as $artikel)
-                    <a class="group flex flex-col focus:outline-none" href="{{ route('Artikel.detail', $artikel->id) }}">
+                
+                <?php $__currentLoopData = $artikels->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $artikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <a class="group flex flex-col focus:outline-none" href="<?php echo e(route('Artikel.detail', $artikel->id)); ?>">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
                             <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-                                src="{{ asset('storage/' . $artikel->gambar) }}" alt="Blog Image">
+                                src="<?php echo e(asset('storage/' . $artikel->gambar)); ?>" alt="Blog Image">
 
                             <span
                                 class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">
-                                {{ \Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('D MMMM, YYYY') }}
+                                <?php echo e(\Carbon\Carbon::parse($artikel->tgl_published)->locale('id')->isoFormat('D MMMM, YYYY')); ?>
+
                             </span>
                         </div>
 
                         <div class="mt-7">
                             <h3
                                 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
-                                {{ $locale !== 'id' ? $artikel->judul_translated : $artikel->judul }}
+                                <?php echo e($locale !== 'id' ? $artikel->judul_translated : $artikel->judul); ?>
+
                             </h3>
                             <p
                                 class="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
-                                {{ __('message.read_more') }}
+                                <?php echo e(__('message.read_more')); ?>
+
                                 <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -213,7 +219,7 @@
                             </p>
                         </div>
                     </a>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 <!-- End Card -->
             </div>
@@ -221,10 +227,10 @@
         </div>
         <!-- End Card Blog -->
 
-        {{-- kerjasama --}}
+        
         <section class="py-12">
             <div class="mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-center">{{ __('message.colab') }}</h2>
+                <h2 class="text-3xl font-bold mb-6 text-center"><?php echo e(__('message.colab')); ?></h2>
                 <div class="relative w-full bg-gray-400 container-block">
                     <div
                         class="relative w-full py-3 mx-auto overflow-hidden text-lg italic tracking-wide text-white uppercase bg-gray-400 max-w-7xl sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
@@ -233,13 +239,13 @@
                         <div x-ref="content" class="flex items-center justify-center h-48 animate-marquee">
                             <div x-ref="item"
                                 class="flex items-center justify-around flex-shrink-0 space-x-8 text-white flex-wrap">
-                                @foreach ($kerjasamas as $kerjasama)
+                                <?php $__currentLoopData = $kerjasamas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kerjasama): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="w-auto sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                                         <img class="h-40 w-full object-cover"
-                                            src="{{ asset('storage/' . $kerjasama->gambar) }}"
+                                            src="<?php echo e(asset('storage/' . $kerjasama->gambar)); ?>"
                                             alt="">
                                     </div>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
                     </div>
@@ -290,7 +296,7 @@
         <!-- Testimonials -->
         <section class="bg-green-50 py-12">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-6 text-center">{{ __('message.video_profile') }}</h2>
+                <h2 class="text-3xl font-bold mb-6 text-center"><?php echo e(__('message.video_profile')); ?></h2>
                 <div class="flex flex-wrap -mx-4 justify-center">
                     <iframe class="border rounded-lg" width="760" height="415"
                         src="https://www.youtube.com/embed/0E4aRguHzDE" frameborder="0" allowfullscreen></iframe>
@@ -306,9 +312,9 @@
                 <!-- Tentang Kami -->
                 <div class="formkanan">
                     <div class="relative">
-                        <h1 class="text-2xl font-bold">@lang('message.about us bot')</h1>
+                        <h1 class="text-2xl font-bold"><?php echo app('translator')->get('message.about us bot'); ?></h1>
                         <h3 class="text-xl mt-3 text-justify">
-                            @lang('message.text_about_us')
+                            <?php echo app('translator')->get('message.text_about_us'); ?>
                         </h3>
                     </div>
                 </div>
@@ -327,12 +333,12 @@
             <div class="bg-white p-4 rounded-lg shadow-md max-w-xs w-40">
                 <h2 class="text-lg font-semibold mb-2">Visitors</h2>
                 <div class="mb-2">
-                    <span>Today : {{ $totalVisitCount }}</span>
+                    <span>Today : <?php echo e($totalVisitCount); ?></span>
                     <span class="font-semibold"></span>
 
                 </div>
                 <div class="mb-2">
-                    <span> Total : {{ $total }}</span>
+                    <span> Total : <?php echo e($total); ?></span>
                     <span class="font-semibold"></span>
                 </div>
 
@@ -344,7 +350,7 @@
         <button data-modal-target="select-modal" data-modal-toggle="select-modal"
             class="fixed bottom-16 right-9 block text-white bg-yellow-400 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-500 dark:focus:ring-yellow-400 z-20"
             type="button">
-            @lang('message.contact_us')
+            <?php echo app('translator')->get('message.contact_us'); ?>
         </button>
 
         <!-- Main modal -->
@@ -357,8 +363,8 @@
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t bg-yellow-400">
 
                         <div class=" rounded-t-lg p-4 text-white">
-                            <h2 class="text-xl font-bold">@lang('message.modal_title')</h2>
-                            <p class="text-sm">@lang('message.modal_body')</p>
+                            <h2 class="text-xl font-bold"><?php echo app('translator')->get('message.modal_title'); ?></h2>
+                            <p class="text-sm"><?php echo app('translator')->get('message.modal_body'); ?></p>
                         </div>
                         <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -376,26 +382,26 @@
                         <ul class="space-y-4 mb-4">
                             <li>
                                 <div class="flex flex-col items-center bg-white rounded-b-lg p-4 mb-11">
-                                    <p class="text-center mb-11">@lang('message.start_button')</p>
+                                    <p class="text-center mb-11"><?php echo app('translator')->get('message.start_button'); ?></p>
                                     <button class="bg-yellow-400 text-white rounded-lg px-4 py-2 mb-11">
-                                        @if ($whatsapp)
-                                            <a href="{{ $whatsapp->tautan }}">@lang('message.contact_us_on')</a>
-                                        @else
-                                            <span>@lang('message.contact_us_on_not_available')</span>
-                                        @endif
+                                        <?php if($whatsapp): ?>
+                                            <a href="<?php echo e($whatsapp->tautan); ?>"><?php echo app('translator')->get('message.contact_us_on'); ?></a>
+                                        <?php else: ?>
+                                            <span><?php echo app('translator')->get('message.contact_us_on_not_available'); ?></span>
+                                        <?php endif; ?>
                                     </button>
-                                    <div class="text-center mt-4">@lang('message.follow')</div>
+                                    <div class="text-center mt-4"><?php echo app('translator')->get('message.follow'); ?></div>
                                     <ul
                                         class="grid grid-cols-3 gap-3 justify-items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                        @foreach ($kontaks->take(3) as $kontak)
+                                        <?php $__currentLoopData = $kontaks->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kontak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <li class="flex justify-center self-center items-center">
-                                                <a href="{{ $kontak->tautan }}" class="hover:underline">
-                                                    <img src="{{ asset('storage/' . $kontak->gambar) }}"
-                                                        alt="{{ $kontak->nama_aplikasi }}"
+                                                <a href="<?php echo e($kontak->tautan); ?>" class="hover:underline">
+                                                    <img src="<?php echo e(asset('storage/' . $kontak->gambar)); ?>"
+                                                        alt="<?php echo e($kontak->nama_aplikasi); ?>"
                                                         class="h-12 w-12 sm:h-16 sm:w-16">
                                                 </a>
                                             </li>
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </div>
 
@@ -428,4 +434,6 @@
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     </body>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\bccrafts\resources\views/beranda.blade.php ENDPATH**/ ?>

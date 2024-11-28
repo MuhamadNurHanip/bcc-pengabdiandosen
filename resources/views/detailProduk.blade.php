@@ -142,7 +142,7 @@
                                                     </div>
                                                     {{-- <div class="w-full text-gray-500 dark:text-gray-400">Flowbite</div> --}}
                                                 </div>
-                                                <img src="{{ asset('images/' . $kontak->gambar) }}"
+                                                <img src="{{ asset('storage/' . $kontak->gambar) }}"
                                                     alt="{{ $kontak->nama_aplikasi }}" class="h-12 w-12 sm:h-16 sm:w-16">
                                             </label>
                                         </a>

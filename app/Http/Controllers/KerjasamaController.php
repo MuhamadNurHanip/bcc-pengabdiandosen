@@ -70,19 +70,19 @@ public function index2()
         ]);
 
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
-            if ($kerjasama->gambar && file_exists(public_path('artikel'.$kerjasama->gambar))) {
-                unlink(public_path('artikel'.$kerjasama->gambar));
+            if ($kerjasama->gambar && Storage::disk('public')->exists('kerjasama/' . $kerjasama->gambar)) {
+                Storage::disk('public')->delete('kerjasama/' . $kerjasama->gambar);
             }
 
-            $imageName = time().'.'.$request->gambar->extension();
-            $request->gambar->move(public_path('storage/upload/artikel'), $imageName);
-
-            $kerjasama->gambar = $imageName;
+            $file = $request->file('gambar');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $path = Storage::disk('public')->putFileAs('artikel', $file, $filename);
         }
 
-        $kerjasama->nama_instansi = $request->nama_instansi;
-        $kerjasama->save();
+        $kerjasama->update([
+            'nama_instansi' => $request->nama_instansi,
+            'gambar' => $path,
+        ]);
 
         return redirect()->route('kerjasama.index')->with('success', 'Data berhasil diperbarui!');
     }

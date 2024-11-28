@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kontak;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KontakController extends Controller
 {
@@ -40,12 +41,13 @@ public function index2()
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('storage/upload/artikel'), $filename);
+            $path = 'kontak/' . $filename;
+            Storage::drive('public')->put($path, file_get_contents($file));
         }
 
         Kontak::create([
             'nama_aplikasi' => $request->nama_aplikasi,
-            'gambar' => $filename,
+            'gambar' => $path,
             'tautan' => $request->tautan, // Simpan tautan
         ]);
 
@@ -70,21 +72,20 @@ public function index2()
         ]);
 
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
-            if ($kontak->gambar && file_exists(public_path('artikel'.$kontak->gambar))) {
-                unlink(public_path('storage/upload/artikel'.$kontak->gambar));
+            if ($kontak->gambar && Storage::disk('public')->exists('kontak/' . $kontak->gambar)) {
+                Storage::disk('public')->delete('kontak/' . $kontak->gambar);
             }
 
-            $imageName = time().'.'.$request->gambar->extension();
-            $request->gambar->move(public_path('artikel'), $imageName);
-
-            $kontak->gambar = $imageName;
+            $file = $request->file('gambar');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $path = Storage::disk('public')->putFileAs('kontak', $file, $filename);
         }
 
-        $kontak->nama_aplikasi = $request->nama_aplikasi;
-        $kontak->tautan = $request->tautan;
-        $kontak->save();
-
+        $kontak->update([
+            'nama_aplikasi' => $request->nama_aplikasi,
+            'gambar' => $path,
+            'tautan' => $request->tautan, // Simpan tautan
+        ]);
         return redirect()->route('kontak.index')->with('success', 'Data berhasil diperbarui!');
     }
 

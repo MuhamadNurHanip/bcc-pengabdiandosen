@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" class="smooth-scroll">
+<html lang="<?php echo e(app()->getLocale()); ?>" class="smooth-scroll">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blimbingsari Creative Craft</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
     <link href="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
+    <link rel="icon" href="<?php echo e(asset('images/logo.png')); ?>" type="image/png">
 
     <!-- CSS for Animations -->
     <style>
@@ -67,39 +67,39 @@
         }
     </style>
 
-    {{-- preline ui --}}
+    
     <script src="./node_modules/preline/dist/preline.js"></script>
 
 </head>
 
 <body class="flex flex-col min-h-screen">
-    {{-- Navbar --}}
+    
     <nav class="bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-20">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ url('images/logo.png') }}" class="w-14 h-14 object-contain ml-6">
+                <img src="<?php echo e(url('images/logo.png')); ?>" class="w-14 h-14 object-contain ml-6">
             </a>
             <div class="bungkus flex items-center">
                 <!-- Dropdown Multilanguage -->
                 <div class="md:absolute relative mr-4">
                     <button id="languageDropdown" data-dropdown-toggle="languageDropdownMenus"
                         class="flex items-center md:py-2 md:px-3 rounded-md md:hidden hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white">
-                        @if (app()->getLocale() === 'id')
+                        <?php if(app()->getLocale() === 'id'): ?>
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1e9.svg"
                                 alt="Indonesia" class="w-5 h-5 inline">
-                        @elseif (app()->getLocale() === 'fr')
+                        <?php elseif(app()->getLocale() === 'fr'): ?>
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg"
                                 alt="Français" class="w-5 h-5 inline">
-                        @elseif (app()->getLocale() === 'zh')
+                        <?php elseif(app()->getLocale() === 'zh'): ?>
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg"
                                 alt="Chine" class="w-5 h-5 inline">
-                        @elseif (app()->getLocale() === 'ja')
+                        <?php elseif(app()->getLocale() === 'ja'): ?>
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg"
                                 alt="Japan" class="w-5 h-5 inline">
-                        @else
+                        <?php else: ?>
                             <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg"
                                 alt="English" class="w-5 h-5 inline">
-                        @endif
+                        <?php endif; ?>
                         <svg class="w-4 h-4 ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -111,7 +111,7 @@
                         class="absolute hidden right-0 z-10 mt-2 w-32 bg-white rounded-lg shadow-lg dark:bg-gray-800">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
                             <li>
-                                <a href="{{ route('locale.switch', 'en') }}"
+                                <a href="<?php echo e(route('locale.switch', 'en')); ?>"
                                     class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg"
                                         alt="English" class="w-6 h-6 mr-2">
@@ -119,7 +119,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('locale.switch', 'id') }}"
+                                <a href="<?php echo e(route('locale.switch', 'id')); ?>"
                                     class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1e9.svg"
                                         alt="Indonesia" class="w-6 h-6 mr-2">
@@ -127,7 +127,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('locale.switch', 'fr') }}"
+                                <a href="<?php echo e(route('locale.switch', 'fr')); ?>"
                                     class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg"
                                         alt="Français" class="w-6 h-6 mr-2">
@@ -135,7 +135,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('locale.switch', 'zh') }}"
+                                <a href="<?php echo e(route('locale.switch', 'zh')); ?>"
                                     class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg"
                                         alt="中文" class="w-6 h-6 mr-2">
@@ -143,7 +143,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('locale.switch', 'ja') }}"
+                                <a href="<?php echo e(route('locale.switch', 'ja')); ?>"
                                     class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg"
                                         alt="日本語" class="w-6 h-6 mr-2">
@@ -170,27 +170,27 @@
                     <ul
                         class="font-medium flex flex-col md:flex-row md:space-x-8 md:justify-center rtl:space-x-reverse">
                         <li>
-                            <a href="{{ route('beranda') }}"
-                                class="block py-2 px-3 {{ request()->routeIs('beranda') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                aria-current="page">@lang('message.home')</a>
+                            <a href="<?php echo e(route('beranda')); ?>"
+                                class="block py-2 px-3 <?php echo e(request()->routeIs('beranda') ? 'text-blue-700' : 'text-gray-900'); ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                aria-current="page"><?php echo app('translator')->get('message.home'); ?></a>
                         </li>
 
                         <li>
-                            <a href="{{ route('index') }}"
-                                class="block py-2 px-3 {{ request()->routeIs('index') || request()->is('kategori/*') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                                @lang('message.categories')
+                            <a href="<?php echo e(route('index')); ?>"
+                                class="block py-2 px-3 <?php echo e(request()->routeIs('index') || request()->is('kategori/*') ? 'text-blue-700' : 'text-gray-900'); ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                <?php echo app('translator')->get('message.categories'); ?>
                             </a>
                         </li>
 
                         <li>
-                            <a href="{{ route('Artikel.indexArtikel') }}"
-                                class="block py-2 px-3 {{ request()->routeIs('Artikel.indexArtikel') || request()->is('detailArtikel/*') ? 'text-blue-700' : 'text-gray-900' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                                @lang('message.articles')
+                            <a href="<?php echo e(route('Artikel.indexArtikel')); ?>"
+                                class="block py-2 px-3 <?php echo e(request()->routeIs('Artikel.indexArtikel') || request()->is('detailArtikel/*') ? 'text-blue-700' : 'text-gray-900'); ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                <?php echo app('translator')->get('message.articles'); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('beranda') }}#tentang-kami"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">@lang('message.about_us')</a>
+                            <a href="<?php echo e(route('beranda')); ?>#tentang-kami"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><?php echo app('translator')->get('message.about_us'); ?></a>
                         </li>
                     </ul>
                 </div>
@@ -199,22 +199,22 @@
             <div class="absolute md:relative ml-12">
                 <button id="languageDropdown" data-dropdown-toggle="languageDropdownMenu"
                     class="md:flex items-center md:py-2 md:px-3 rounded-md hidden  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white">
-                    @if (app()->getLocale() === 'id')
+                    <?php if(app()->getLocale() === 'id'): ?>
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1e9.svg"
                             alt="Indonesia" class="w-5 h-5 inline">
-                    @elseif (app()->getLocale() === 'fr')
+                    <?php elseif(app()->getLocale() === 'fr'): ?>
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg"
                             alt="Français" class="w-5 h-5 inline">
-                    @elseif (app()->getLocale() === 'zh')
+                    <?php elseif(app()->getLocale() === 'zh'): ?>
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg"
                             alt="Chine" class="w-5 h-5 inline">
-                    @elseif (app()->getLocale() === 'ja')
+                    <?php elseif(app()->getLocale() === 'ja'): ?>
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg"
                             alt="Japan" class="w-5 h-5 inline">
-                    @else
+                    <?php else: ?>
                         <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg"
                             alt="English" class="w-5 h-5 inline">
-                    @endif
+                    <?php endif; ?>
                     <svg class="w-4 h-4 ml-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -226,7 +226,7 @@
                     class="absolute hidden right-0 z-10 mt-2 w-32 bg-white rounded-lg shadow-lg dark:bg-gray-800">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
                         <li>
-                            <a href="{{ route('locale.switch', 'en') }}"
+                            <a href="<?php echo e(route('locale.switch', 'en')); ?>"
                                 class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg"
                                     alt="English" class="w-6 h-6 mr-2">
@@ -234,7 +234,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('locale.switch', 'id') }}"
+                            <a href="<?php echo e(route('locale.switch', 'id')); ?>"
                                 class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1e9.svg"
                                     alt="Indonesia" class="w-6 h-6 mr-2">
@@ -242,7 +242,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('locale.switch', 'fr') }}"
+                            <a href="<?php echo e(route('locale.switch', 'fr')); ?>"
                                 class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg"
                                     alt="Français" class="w-6 h-6 mr-2">
@@ -250,7 +250,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('locale.switch', 'zh') }}"
+                            <a href="<?php echo e(route('locale.switch', 'zh')); ?>"
                                 class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg"
                                     alt="中文" class="w-6 h-6 mr-2">
@@ -258,7 +258,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('locale.switch', 'ja') }}"
+                            <a href="<?php echo e(route('locale.switch', 'ja')); ?>"
                                 class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">
                                 <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg"
                                     alt="日本語" class="w-6 h-6 mr-2">
@@ -272,26 +272,26 @@
         </div>
     </nav>
 
-    @yield('content')
+    <?php echo $__env->yieldContent('content'); ?>
 
-    {{-- Footer --}}
+    
     <footer
         class="w-screen flex-auto bg-white border-t border-gray-200 shadow flex items-center justify-between p-6 dark:bg-gray-800 dark:border-gray-600">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © {{ $currentYear }} <a href="https://poliwangi.ac.id/" class="hover:underline">Developed By Politeknik
+            © <?php echo e($currentYear); ?> <a href="https://poliwangi.ac.id/" class="hover:underline">Developed By Politeknik
                 Negeri Banyuwangi</a>.
             All Rights
             Reserved.
         </span>
         <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            @foreach ($kontaks as $kontak)
+            <?php $__currentLoopData = $kontaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kontak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <li class="mr-8">
-                    <a href="{{ $kontak->tautan }}" class="hover:underline">
-                        <img src="{{ asset('storage/' . $kontak->gambar) }}" alt="{{ $kontak->nama_aplikasi }}"
+                    <a href="<?php echo e($kontak->tautan); ?>" class="hover:underline">
+                        <img src="<?php echo e(asset('storage/' . $kontak->gambar)); ?>" alt="<?php echo e($kontak->nama_aplikasi); ?>"
                             class="h-12 w-12 sm:h-16 sm:w-16">
                     </a>
                 </li>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         </ul>
     </footer>
@@ -412,3 +412,4 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 
 </html>
+<?php /**PATH C:\laragon\www\bccrafts\resources\views/layout/app.blade.php ENDPATH**/ ?>
