@@ -99,9 +99,7 @@ class ArtikelController extends Controller
             $file = $request->file('gambar');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $path = 'artikel/' . $filename;
-            // Storage::disk('public')->put($path, file_get_contents($file));
-            Storage::drive('public')->put($path, file_get_contents($file));
-            // $url = Storage::url($path);
+            Storage::disk('public')->put($path, file_get_contents($file));
 
             Log::info('Image uploaded:', ['path' => $path, 'filename' => $filename]);
         } else {
