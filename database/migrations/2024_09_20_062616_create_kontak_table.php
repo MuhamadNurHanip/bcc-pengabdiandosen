@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_aplikasi');
             $table->string('gambar'); // Menyimpan path gambar
-            $table->string('tautan');
+            $table->longText('tautan')->change();
             $table->timestamps();
         });
     }

@@ -15,7 +15,6 @@ class ProdukController extends Controller
      * Display a listing of the resource.
      */
 
-
     public function index(Request $request)
     {
         $search = $request->input('search');
@@ -48,109 +47,66 @@ class ProdukController extends Controller
 
 
 
-    public function store(Request $request)
-    {
-        // Log request data yang masuk
-        Log::info('Data request diterima:', $request->all());
-
-        // Validasi input
-        try {
-            $validatedData = $request->validate([
-                'nama' => 'required',
-                'bahan' => 'required',
-                'ukuran' => 'required',
-                'deskripsi' => 'required|min:5',
-                'kategori_id' => 'required|integer',
-                'image1' => 'required|image|mimes:jpeg,png,jpg,gif|max:12048',
-                'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'image3' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'image4' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
-            ]);
-            Log::info('Validasi berhasil:', $validatedData);
-        } catch (\Exception $e) {
-            Log::error('Validasi gagal:', ['error' => $e->getMessage()]);
-            return redirect()->back()->withErrors($e->getMessage())->withInput();
-        }
-
-        // Proses penyimpanan produk
-        $produk = new Produk();
-        $produk->nama = strtoupper($validatedData['nama']);
-        $produk->bahan = $validatedData['bahan'];
-        $produk->ukuran = $validatedData['ukuran'];
-        $produk->deskripsi = $validatedData['deskripsi'];
-        $produk->kategori_id = $validatedData['kategori_id'];
-
-        Log::info('Data produk yang akan disimpan:', $produk->toArray());
-
-        // Proses penyimpanan gambar pertama
-        if ($request->hasFile('image1')) {
-            try {
-                $image1 = $request->file('image1');
-                $imageName1 = time() . '_1.' . $image1->getClientOriginalExtension();
-                $image1->move(storage_path('app/public/produk'), $imageName1);
-                $produk->image1 = $imageName1;
-                Log::info('Image 1 uploaded successfully: ' . $imageName1);
-            } catch (\Exception $e) {
-                Log::error('Error uploading Image 1:', ['error' => $e->getMessage()]);
-            }
-        }
-
-        // Proses penyimpanan gambar kedua
-        if ($request->hasFile('image2')) {
-            try {
-                $image2 = $request->file('image2');
-                $imageName2 = time() . '_2.' . $image2->getClientOriginalExtension();
-                $image2->move(storage_path('app/public/produk'), $imageName2);
-                $produk->image2 = $imageName2;
-                Log::info('Image 2 uploaded successfully: ' . $imageName2);
-            } catch (\Exception $e) {
-                Log::error('Error uploading Image 2:', ['error' => $e->getMessage()]);
-            }
-        }
-
-        // Proses penyimpanan gambar ketiga
-        if ($request->hasFile('image3')) {
-            try {
-                $image3 = $request->file('image3');
-                $imageName3 = time() . '_3.' . $image3->getClientOriginalExtension();
-                $image3->move(storage_path('app/public/produk'), $imageName3);
-                $produk->image3 = $imageName3;
-                Log::info('Image 3 uploaded successfully: ' . $imageName3);
-            } catch (\Exception $e) {
-                Log::error('Error uploading Image 3:', ['error' => $e->getMessage()]);
-            }
-        } else {
-            Log::info('Image 3 not uploaded');
-        }
-
-        // Proses penyimpanan gambar keempat
-        if ($request->hasFile('image4')) {
-            try {
-                $image4 = $request->file('image4');
-                $imageName4 = time() . '_4.' . $image4->getClientOriginalExtension();
-                $image4->move(storage_path('app/public/produk'), $imageName4);
-                $produk->image4 = $imageName4;
-                Log::info('Image 4 uploaded successfully: ' . $imageName4);
-            } catch (\Exception $e) {
-                Log::error('Error uploading Image 4:', ['error' => $e->getMessage()]);
-            }
-        } else {
-            Log::info('Image 4 not uploaded');
-        }
-
-        // Simpan produk ke database
-        try {
-            if ($produk->save()) {
-                Log::info('Produk berhasil disimpan:', $produk->toArray());
-            } else {
-                Log::error('Produk gagal disimpan');
-            }
-        } catch (\Exception $e) {
-            Log::error('Error saving produk:', ['error' => $e->getMessage()]);
-        }
-
-        return redirect()->route('produk.index')->with('success', 'Produk ' . $validatedData['nama'] . ' telah ditambahkan');
-    }
+     public function store(Request $request)
+     {
+         // Log request data yang masuk
+         Log::info('Data request diterima:', $request->all());
+ 
+         // Validasi input
+         try {
+             $validatedData = $request->validate([
+                 'nama' => 'required',
+                 'bahan' => 'required',
+                 'ukuran' => 'required',
+                 'deskripsi' => 'required|min:5',
+                 'kategori_id' => 'required|integer',
+                 'image1' => 'required|image|mimes:jpeg,png,jpg,gif|max:12048',
+                 'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                 'image3' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                 'image4' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+             ]);
+             Log::info('Validasi berhasil:', $validatedData);
+         } catch (\Exception $e) {
+             Log::error('Validasi gagal:', ['error' => $e->getMessage()]);
+             return redirect()->back()->withErrors($e->getMessage())->withInput();
+         }
+ 
+         // Proses penyimpanan produk
+         $produk = new Produk();
+         $produk->nama = strtoupper($validatedData['nama']);
+         $produk->bahan = $validatedData['bahan'];
+         $produk->ukuran = $validatedData['ukuran'];
+         $produk->deskripsi = $validatedData['deskripsi'];
+         $produk->kategori_id = $validatedData['kategori_id'];
+ 
+         Log::info('Data produk yang akan disimpan:', $produk->toArray());
+ 
+         
+         $images = ['image1', 'image2', 'image3', 'image4'];
+         foreach ($images as $image) {
+             if ($request->hasFile($image)) {
+                 try {
+                     $file = $request->file($image);
+                     $filename = time() . '_' . $image . '.' . $file->getClientOriginalExtension();
+                     $path = 'produk/' . $filename;
+                     Storage::drive('public')->put($path, file_get_contents($file));
+                     $produk->$image = $path;
+                     Log::info('Image uploaded:', ['image' => $image, 'path' => $path, 'filename' => $filename]);
+                 } catch (\Exception $e) {
+                     Log::error('Error uploading ' . $image . ':', ['error' => $e->getMessage()]);
+                     return back()->withErrors([$image => 'Gagal mengunggah gambar ' . $image])->withInput();
+                 }
+             } else {
+                 Log::info($image . ' not uploaded');
+             }
+         }
+ 
+         Produk::create([
+           
+        ]);
+ 
+         return redirect()->route('produk.index')->with('success', 'Produk ' . $validatedData['nama'] . ' telah ditambahkan');
+     }
 
 
 
