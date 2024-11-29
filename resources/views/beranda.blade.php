@@ -41,7 +41,7 @@
                         class="max-w-xs flex-shrink-0 w-41 sm:w-48 md:w-44 lg:w-[250px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
                         <a href="#">
                             <img class="rounded-t-lg w-full h-36 object-cover"
-                                src="{{ asset('storage/app/public/produk/' . $produk->image1) }}"
+                                src="{{ asset('storage/' . $produk->image1) }}"
                                 alt="{{ $produk->nama }}" />
                         </a>
                         <div class="p-3">

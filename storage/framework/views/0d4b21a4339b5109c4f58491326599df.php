@@ -412,4 +412,4 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 
 </html>
-<?php /**PATH C:\laragon\www\bccrafts\resources\views/layout/app.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\lenovo\Downloads\test\bcc-pengabdiandosen\resources\views/layout/app.blade.php ENDPATH**/ ?>

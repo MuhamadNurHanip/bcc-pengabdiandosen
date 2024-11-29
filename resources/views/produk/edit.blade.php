@@ -57,22 +57,22 @@
                     <div class="mb-4">
                         <label for="image1" class="block text-gray-700">Gambar:</label>
                         <input type="file" id="image1" name="image1" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        <img src="{{ asset('upload/produk/' . $produk->image1) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <img src="{{ asset('storage/' . $produk->image1) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                     </div>
                     <div class="mb-4">
                         <label for="image2" class="block text-gray-700">Gambar:</label>
                         <input type="file" id="image2" name="image2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        <img src="{{ asset('upload/produk/' . $produk->image2) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <img src="{{ asset('storage/' . $produk->image2) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                     </div>
                     <div class="mb-4">
                         <label for="image3" class="block text-gray-700">Gambar:</label>
                         <input type="file" id="image3" name="image3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        <img src="{{ asset('upload/produk/' . $produk->image3) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <img src="{{ asset('storage/' . $produk->image3) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                     </div>
                     <div class="mb-4">
                         <label for="image4" class="block text-gray-700">Gambar:</label>
                         <input type="file" id="image4" name="image4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        <img src="{{ asset('upload/produk/' . $produk->image4) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <img src="{{ asset('storage/' . $produk->image4) }}" alt="Produk Image" class="mt-2" style="max-width: 300px; border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                     </div>
 
                     <div class="flex items-center justify-between">

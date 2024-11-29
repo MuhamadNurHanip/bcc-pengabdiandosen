@@ -96,4 +96,4 @@
         </div>
     </nav>
 <?php endif; ?>
-<?php /**PATH C:\laragon\www\bccrafts\resources\views/vendor/pagination/tailwind.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\lenovo\Downloads\test\bcc-pengabdiandosen\resources\views/vendor/pagination/tailwind.blade.php ENDPATH**/ ?>

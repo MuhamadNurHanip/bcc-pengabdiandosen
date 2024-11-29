@@ -16,7 +16,7 @@
                                     <!-- Item 1 -->
                                     @if ($produk->image1)
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('upload/produk/' . $produk->image1) }}"
+                                            <img src="{{ asset('storage/' . $produk->image1) }}"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
@@ -24,7 +24,7 @@
                                     <!-- Item 2 -->
                                     @if ($produk->image2)
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('upload/produk/' . $produk->image2) }}"
+                                            <img src="{{ asset('storage/' . $produk->image2) }}"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
@@ -32,7 +32,7 @@
                                     <!-- Item 3 -->
                                     @if ($produk->image3)
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('upload/produk/' . $produk->image3) }}"
+                                            <img src="{{ asset('storage/' . $produk->image3) }}"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>
@@ -40,7 +40,7 @@
                                     <!-- Item 4 -->
                                     @if ($produk->image4)
                                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                            <img src="{{ asset('upload/produk/' . $produk->image4) }}"
+                                            <img src="{{ asset('storage/' . $produk->image4) }}"
                                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                                 alt="...">
                                         </div>

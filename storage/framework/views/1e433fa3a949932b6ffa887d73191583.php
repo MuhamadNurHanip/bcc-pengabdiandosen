@@ -40,7 +40,7 @@
                         class="max-w-xs flex-shrink-0 w-41 sm:w-48 md:w-44 lg:w-[250px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
                         <a href="#">
                             <img class="rounded-t-lg w-full h-36 object-cover"
-                                src="<?php echo e(asset('storage/app/public/produk/' . $produk->image1)); ?>"
+                                src="<?php echo e(asset('storage/produk/' . $produk->image1)); ?>"
                                 alt="<?php echo e($produk->nama); ?>" />
                         </a>
                         <div class="p-3">
@@ -436,4 +436,4 @@
     </body>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\bccrafts\resources\views/beranda.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\test\bcc-pengabdiandosen\resources\views/beranda.blade.php ENDPATH**/ ?>

@@ -40,4 +40,4 @@
 </body>
 </html>
 
-<?php /**PATH C:\laragon\www\bccrafts\resources\views/components/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\lenovo\Downloads\test\bcc-pengabdiandosen\resources\views/components/layout.blade.php ENDPATH**/ ?>
