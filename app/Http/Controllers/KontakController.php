@@ -35,7 +35,7 @@ public function index2()
         $request->validate([
             'nama_aplikasi' => 'required|string|max:255',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:11048',
-            'tautan' => 'required|url', // Validasi tautan
+            'tautan' => 'required|url|max:65535',
         ]);
         
         if ($request->hasFile('gambar')) {
